@@ -1,44 +1,626 @@
 [
     {
-        "name":"Tomorrow, and Tomorrow, and Tomorrow",
-        "author": "Gabrielle Zevin",
-        "isbn":"9780593321201",
-        "comments":[
-            "so good",
-            "too good",
-            "could be better"
-        ],
-        "status":"read",
-        "img":"assets/tomorrow-tomorrow-tomorrow.jpeg",
-        "x":30,
-        "y":30
-        
+        "title": "The White Book",
+        "author": "Han Kang",
+        "isbn": "0"
     },
     {
-        "name":"Metaphors We Live By",
-        "author": "George Lackoff",
-        "isbn":"9780226468013",
-        "comments":[
-            "metaphors are great",
-            "sophisticated",
-            "can I borrow this book?"
-        ],
-        "status":"reading",
-        "img":"assets/metaphors-we-live-by.jpeg",
-        "x":60,
-        "y":80
+        "title": "Men Without Women",
+        "author": "Haruki Murakami",
+        "isbn": "0"
     },
     {
-        "name":"All About Love",
+        "title": "In Praise of the Stepmother",
+        "author": "Mario Vargas Ilosa",
+        "isbn": "0"
+    },
+    {
+        "title": "Sylvia Plath",
+        "author": "The Bell Jar",
+        "isbn": "0"
+    },
+    {
+        "title": "Against Interpretation",
+        "author": "Susan Sontag",
+        "isbn": "0"
+    },
+    {
+        "title": "As Consciousness is Harnessed to Flesh",
+        "author": "Susan Sontag",
+        "isbn": "0"
+    },
+    {
+        "title": "Weight of the Earth",
+        "author": "David Wojnarowicz",
+        "isbn": "0"
+    },
+    {
+        "title": "Faculty of Dreams",
+        "author": "Sara Stridsberg",
+        "isbn": "0"
+    },
+    {
+        "title": "比霧更深的地方",
+        "author": "張惠菁",
+        "isbn": "9789863596349"
+    },
+    {
+        "title": "Bergeners",
+        "author": "Tomas Espedal",
+        "isbn": "0"
+    },
+    {
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "isbn": "0"
+    },
+    {
+        "title": "Talking to Women",
+        "author": "Nell Dunn",
+        "isbn": "0"
+    },
+    {
+        "title": "挪威的森林（上）",
+        "author": "村上春樹",
+        "isbn": "0"
+    },
+    {
+        "title": "挪威的森林（下）",
+        "author": "村上春樹",
+        "isbn": "0"
+    },
+    {
+        "title": "直到長出青苔",
+        "author": "杉本博司",
+        "isbn": "9868597986"
+    },
+    {
+        "title": "陰翳禮讚",
+        "author": "谷崎潤一郎",
+        "isbn": "9789862350614"
+    },
+    {
+        "title": "戀人絮語",
+        "author": "羅蘭巴特",
+        "isbn": "9862720077"
+    },
+    {
+        "title": "液態之愛",
+        "author": "Zygmunt Bauman",
+        "isbn": "0"
+    },
+    {
+        "title": "金閣寺",
+        "author": "三島由紀夫",
+        "isbn": "0"
+    },
+    {
+        "title": "東方與西方",
+        "author": "黃天麟",
+        "isbn": "0"
+    },
+    {
+        "title": "The Unbearable Lightness of Being",
+        "author": "Milan Kundera",
+        "isbn": "0"
+    },
+    {
+        "title": "白河夜船",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "斜陽",
+        "author": "太宰治",
+        "isbn": "0"
+    },
+    {
+        "title": "思考的蘆葦",
+        "author": "太宰治",
+        "isbn": "0"
+    },
+    {
+        "title": "三詩人書",
+        "author": "Maria Rainer Rilke",
+        "isbn": "0"
+    },
+    {
+        "title": "人類動物園",
+        "author": "Desmond Morris",
+        "isbn": "0"
+    },
+    {
+        "title": "幸福建築",
+        "author": "Alan De Botton",
+        "isbn": "0"
+    },
+    {
+        "title": "真原醫",
+        "author": "楊定一",
+        "isbn": "0"
+    },
+    {
+        "title": "土星座下",
+        "author": "Susan Sontag",
+        "isbn": "0"
+    },
+    {
+        "title": "脆弱的力量",
+        "author": "Brene Brown",
+        "isbn": "0"
+    },
+    {
+        "title": "最重要的日常",
+        "author": "山下英子、自凝心平",
+        "isbn": "0"
+    },
+    {
+        "title": "一個人的好天氣",
+        "isbn": "0"
+    },
+    {
+        "title": "千羽鶴",
+        "author": "川端康成",
+        "isbn": "0"
+    },
+    {
+        "title": "斜陽",
+        "author": "太宰治",
+        "isbn": "0"
+    },
+    {
+        "title": "魂斷威尼斯",
+        "author": "Thomas Mann",
+        "isbn": "0"
+    },
+    {
+        "title": "世界末日與冷酷異境",
+        "author": "村上春樹",
+        "isbn": "9571313408"
+    },
+    {
+        "title": "王國1：仙女座高台",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "王國2：悲痛失去事物的影子以及魔法",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "性的人間",
+        "author": "大江健三郎",
+        "isbn": "0"
+    },
+    {
+        "title": "Illness As Metaphor",
+        "author": "Susan Sontag",
+        "isbn": "0"
+    },
+    {
+        "title": "Magic Mountain",
+        "author": "Thomas Mann",
+        "isbn": "0"
+    },
+    {
+        "title": "公園生活",
+        "author": "吉田修一",
+        "isbn": "0"
+    },
+    {
+        "title": "為什麼設計",
+        "author": "原研哉",
+        "isbn": "0"
+    },
+    {
+        "title": "雪國",
+        "author": "川端康成",
+        "isbn": "0"
+    },
+    {
+        "title": "理想的下午",
+        "author": "舒國治",
+        "isbn": "0"
+    },
+    {
+        "title": "禪學入門",
+        "author": "鈴木大拙",
+        "isbn": "0"
+    },
+    {
+        "title": "苦雨之地",
+        "author": "吳明益",
+        "isbn": "9789869689274"
+    },
+    {
+        "title": "樹之歌：生物學家對宇宙萬物的哲學思索",
+        "isbn": "9789864773008"
+    },
+    {
+        "title": "徒然草",
+        "author": "吉田兼好",
+        "isbn": "9789571365558"
+    },
+    {
+        "title": "推測設計",
+        "author": "Anthony Dunne, Fiona Raby",
+        "isbn": "9789869801201"
+    },
+    {
+        "title": "另一種語言",
+        "author": "Jhumpa Lahiri",
+        "isbn": "9789869583565"
+    },
+    {
+        "title": "浮光",
+        "author": "吳明益",
+        "isbn": "9789865824150"
+    },
+    {
+        "title": "原子習慣",
+        "author": "James Clear",
+        "isbn": "9789861755267"
+    },
+    {
+        "title": "群鳥",
+        "author": "吉本芭那那",
+        "isbn": "9789571375250"
+    },
+    {
+        "title": "全思考：吧台旁說人生",
+        "author": "北野武",
+        "isbn": "9789865824846"
+    },
+    {
+        "title": "理想的簡單生活",
+        "author": "Dominique Loreau",
+        "isbn": "9789866006548"
+    },
+    {
+        "title": "肥瘦對寫",
+        "author": "駱以軍、董啟章",
+        "isbn": "9789863870913"
+    },
+    {
+        "title": "蟬",
+        "author": "林懷民",
+        "isbn": "0"
+    },
+    {
+        "title": "不朽",
+        "translatedTitle": "L’immortalite",
+        "author": "Milan Kundera",
+        "isbn": "9789573321262"
+    },
+    {
+        "title": "歡迎光臨人類學",
+        "translatedTitle": "Invitation to Anthropology (3rd Edition)",
+        "author": "Luke Eric Lassiter",
+        "isbn": "9789866525285"
+    },
+    {
+        "title": "液態現代性",
+        "translatedTitle": "Liquid Modernity",
+        "author": "Zygmunt Bauman",
+        "isbn": "9789864775767"
+    },
+    {
+        "title": "The End of Eddy",
+        "translatedTitle": "N/A",
+        "author": "Edourard Louis",
+        "isbn": "0"
+    },
+    {
+        "title": "Species and Spaces and Other Poems",
+        "translatedTitle": "N/A",
+        "author": "George Perec",
+        "isbn": "0"
+    },
+    {
+        "title": "A Woman Looking at Men Looking at Women",
+        "translatedTitle": "N/A",
+        "author": "Siri Hustvedt",
+        "isbn": "0"
+    },
+    {
+        "title": "Eichmann and the Holocaust",
+        "translatedTitle": "N/A",
+        "author": "Hannah Arendt",
+        "isbn": "0"
+    },
+    {
+        "title": "Paris Spleen",
+        "translatedTitle": "N/A",
+        "author": "Charles Baudelaire",
+        "isbn": "0"
+    },
+    {
+        "title": "Nobody's Home",
+        "translatedTitle": "N/A",
+        "author": "Dubravka Ugresic",
+        "isbn": "0"
+    },
+    {
+        "title": "Under the Tuscan Sun",
+        "translatedTitle": "N/A",
+        "author": "Frances Mayes",
+        "isbn": "0"
+    },
+    {
+        "title": "About Looking ",
+        "translatedTitle": "N/A",
+        "author": "John Berger",
+        "isbn": "0"
+    },
+    {
+        "title": "Ways of Seeing",
+        "translatedTitle": "N/A",
+        "author": "John Berger",
+        "isbn": "0"
+    },
+    {
+        "title": "The Lover",
+        "translatedTitle": "N/A",
+        "author": "Margarite Duras",
+        "isbn": "0"
+    },
+    {
+        "title": "Conversation With Friends",
+        "translatedTitle": "N/A",
+        "author": "Sally Rooney",
+        "isbn": "0"
+    },
+    {
+        "title": "Normal People",
+        "translatedTitle": "N/A",
+        "author": "Sally Rooney",
+        "isbn": "0"
+    },
+    {
+        "title": "Beautiful World, Where Are You",
+        "translatedTitle": "N/A",
+        "author": "Sally Rooney",
+        "isbn": "0"
+    },
+    {
+        "title": "The Psycology of Money",
+        "translatedTitle": "N/A",
+        "author": "Morgan Housel",
+        "isbn": "0"
+    },
+    {
+        "title": "All About Love: New Visions",
+        "translatedTitle": "N/A",
         "author": "Bell Hooks",
-        "isbn":"9780226468013",
-        "comments":[
-            "love is great(2022-03-24)",
-            "i need this(2022-10-12)"
-        ],
-        "status":"read",
-        "img":"assets/all-about-love.jpeg",
-        "x":50,
-        "y":20
+        "isbn": "0"
+    },
+    {
+        "title": "身為職業小說家",
+        "translatedTitle": "N/A",
+        "author": "Haruki Murakami",
+        "isbn": "0"
+    },
+    {
+        "title": "An Apprenticeship or The Book of Pleasures",
+        "translatedTitle": "N/A",
+        "author": "Clarice Lispector",
+        "isbn": "0"
+    },
+    {
+        "title": "Essays In Love",
+        "translatedTitle": "N/A",
+        "author": "Alan De Botton",
+        "isbn": "0"
+    },
+    {
+        "title": "The Idiot",
+        "translatedTitle": "N/A",
+        "author": "Elif Batuman",
+        "isbn": "0"
+    },
+    {
+        "title": "Book of Longing",
+        "translatedTitle": "N/A",
+        "author": "Leonard Cohen",
+        "isbn": "0"
+    },
+    {
+        "title": "性意思史",
+        "translatedTitle": "N/A",
+        "author": "張亦絢",
+        "isbn": "0"
+    },
+    {
+        "title": "Goodbye, Again",
+        "translatedTitle": "N/A",
+        "author": "Jonny Sun",
+        "isbn": "0"
+    },
+    {
+        "title": "感覺十書",
+        "translatedTitle": "N/A",
+        "author": "蔣勳",
+        "isbn": "0"
+    },
+    {
+        "title": "The Atmospherians",
+        "translatedTitle": "N/A",
+        "author": "Isle McElroy",
+        "isbn": "0"
+    },
+    {
+        "title": "Writing",
+        "translatedTitle": "N/A",
+        "author": "Margarite Duras",
+        "isbn": "0"
+    },
+    {
+        "title": "品味，從知識開始",
+        "translatedTitle": "N/A",
+        "author": "水野學",
+        "isbn": "0"
+    },
+    {
+        "title": "羽衣",
+        "translatedTitle": "N/A",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "王國3：秘密的花園",
+        "translatedTitle": "N/A",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "王國4：另一個世界",
+        "translatedTitle": "N/A",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "聽風的歌",
+        "translatedTitle": "N/A",
+        "author": "村上春樹",
+        "isbn": "0"
+    },
+    {
+        "title": "我是許涼涼",
+        "translatedTitle": "N/A",
+        "author": "李維菁",
+        "isbn": "0"
+    },
+    {
+        "title": "愛的不久時：南特／巴黎回憶錄",
+        "translatedTitle": "N/A",
+        "author": "張亦絢",
+        "isbn": "0"
+    },
+    {
+        "title": "療癒的飲食與斷食：新時代的個人營養學",
+        "translatedTitle": "N/A",
+        "author": "楊定一",
+        "isbn": "0"
+    },
+    {
+        "title": "Things: A Story of the Sixties / A Man Asleep",
+        "translatedTitle": "N/A",
+        "author": "George Perec",
+        "isbn": "0"
+    },
+    {
+        "title": "Who Killed My Father",
+        "translatedTitle": "N/A",
+        "author": "Edourard Louis",
+        "isbn": "0"
+    },
+    {
+        "title": "A Woman's Battles and Transformations",
+        "translatedTitle": "N/A",
+        "author": "Edourard Louis",
+        "isbn": "0"
+    },
+    {
+        "title": "Braiding Sweetgrass",
+        "translatedTitle": "N/A",
+        "author": "Robin Wall Kimmerer",
+        "isbn": "0"
+    },
+    {
+        "title": "The Fire Next TIme",
+        "translatedTitle": "N/A",
+        "author": "James Baldwin",
+        "isbn": "0"
+    },
+    {
+        "title": "Against Nature",
+        "translatedTitle": "N/A",
+        "author": "Tomas Espedal",
+        "isbn": "0"
+    },
+    {
+        "title": "Of Cities and Woman",
+        "translatedTitle": "N/A",
+        "author": "Etel Adnan",
+        "isbn": "0"
+    },
+    {
+        "title": "哀愁的預感",
+        "translatedTitle": "N/A",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "蜥蜴",
+        "translatedTitle": "N/A",
+        "author": "吉本芭那那",
+        "isbn": "0"
+    },
+    {
+        "title": "思念的長河",
+        "translatedTitle": "N/A",
+        "author": "三毛",
+        "isbn": "0"
+    },
+    {
+        "title": "Death By Landscape",
+        "translatedTitle": "N/A",
+        "author": "Elvis Wilk",
+        "isbn": "0"
+    },
+    {
+        "title": "沒有色彩的多崎作和他的巡禮之年",
+        "translatedTitle": "N/A",
+        "author": "Haruki Murakami",
+        "isbn": "0"
+    },
+    {
+        "title": "Bliss Montage",
+        "translatedTitle": "N/A",
+        "author": "Ling Ma",
+        "isbn": "0"
+    },
+    {
+        "title": "Klara and the Sun",
+        "translatedTitle": "N/A",
+        "author": "Kazuo Ishiguro",
+        "isbn": "0"
+    },
+    {
+        "title": "Tomorrow, and Tomorrow, and Tomorrow",
+        "translatedTitle": "N/A",
+        "author": "Gabrielle Zevin",
+        "isbn": "0"
+    },
+    {
+        "title": "A Year With Swollen Appendices",
+        "translatedTitle": "N/A",
+        "author": "Brian Eno",
+        "isbn": "0"
+    },
+    {
+        "title": "The Year of Magical Thinking",
+        "translatedTitle": "N/A",
+        "author": "Joan Didion",
+        "isbn": "0"
+    },
+    {
+        "title": "Metaphors We Live By",
+        "translatedTitle": "N/A",
+        "author": "George Lakoff",
+        "isbn": "0"
+    },
+    {
+        "title": "想法誕生前最重要的事",
+        "translatedTitle": "N/A",
+        "author": "Chie Morimoto",
+        "isbn": "9789862356586"
+    },
+    {
+        "title": "Selections from the Journal",
+        "translatedTitle": "N/A",
+        "author": "Jules Renard",
+        "isbn": "0"
     }
 ]

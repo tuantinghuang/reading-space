@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { Book } from './book.js'
 import { Portal } from './portal.js'
 
@@ -9,7 +10,7 @@ let controller, controllerBox;
 let controllerOldPosition = new THREE.Vector3();
 let books = [];
 let portals = [];
-let bookGroup, portalGroup;
+let bookGroup, bookModel, portalGroup;
 
 
 function init() {
@@ -35,6 +36,7 @@ function init() {
     createController();
     createBooks();
     createPortals();
+    callModel();
 
     //light
     let light = new THREE.AmbientLight(0xffffff, 0.8);
@@ -44,6 +46,17 @@ function init() {
     dir_light.position.set(10, 3, 3);
     dir_light.castShadow = true;
     scene.add(dir_light);
+}
+
+function callModel() {
+    let objLoader = new OBJLoader();
+    objLoader.load('assets/model/model.obj', function (object) {
+        bookModel = object;
+
+        console.log('book model loaded!');
+
+        getData(bookModel.children[0]);
+    });
 }
 
 
@@ -92,7 +105,7 @@ function createPortals() {
 
 
 
-async function getData() {
+async function getData(model) {
     const requestURL = "./data.json";
     const request = new Request(requestURL);
     const response = await fetch(request);
@@ -101,9 +114,16 @@ async function getData() {
     if (data.length > 0) {
 
         for (let i = 0; i < data.length; i++) {
-            let x = data[i].x - 50;//translate to center baord size
-            let z = data[i].y - 50;
-            let b = new Book(x, 0.5, z, scene);
+            //translate to center baord size
+            let x = Math.floor(getRandomArbitrary(-50, 50));
+            if (x % 2 == 1) x++;
+
+            let z = Math.floor(getRandomArbitrary(-50, 50));
+            if (z % 2 == 1) z++;
+
+            let b = new Book(x, 0.5, z, scene, model);
+            b.book.userData = data[i];
+
             books.push(b);
         }
     }
@@ -152,6 +172,7 @@ function checkCollision(e) {
     //then move the controller based on keypress
     moveController(e);
 
+    //update controller's position
     controller.updateMatrixWorld();
     //compute the controller bounding box with new controller position
     controllerBox.copy(controller.geometry.boundingBox).applyMatrix4(controller.matrixWorld);
@@ -183,6 +204,7 @@ function checkCollision(e) {
 
         if (bookID) {
             books[bookID].activate();
+            showBookInfo(bookID);
         }
         else if (portalID) {
             portals[portalID].activate();
@@ -193,6 +215,7 @@ function checkCollision(e) {
     } else {
         if (bookID) {
             books[bookID].reset();
+            clearBookInfo();
             bookID = undefined;
         }
         else if (portalID) {
@@ -213,6 +236,7 @@ function render() {
     camera.lookAt(controller.position)
     camera.updateProjectionMatrix();
 
+
     renderer.render(scene, camera);
     requestAnimationFrame(render);
 }
@@ -225,3 +249,80 @@ render();
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+/*
+
+------------------------------------------INTERFACE JAVASCRIPT ------------------------------------
+
+*/
+let collection = [];
+
+function showBookInfo(id) {
+    let container = document.querySelector("#infoContainer");
+    container.style.display = "block";
+    let div = document.querySelector("#info");
+
+    let t = books[id].book.userData.title;
+    let title = document.createTextNode(t);
+    let titleDiv = document.querySelector("#title");
+
+
+    let originalT = books[id].book.userData.translatedTitle;
+    let originalTitle = document.createTextNode(originalT);
+    let originalTitleDiv = document.querySelector("#originalTitle");
+
+
+    let a = books[id].book.userData.author;
+    let author = document.createTextNode(a);
+    let authorDiv = document.querySelector("#author");
+
+
+    let i = books[id].book.userData.isbn;
+    let isbn = document.createTextNode(i);
+    let isbnDiv = document.querySelector("#isbn");
+
+
+    if (titleDiv.innerHTML == "") {
+        titleDiv.appendChild(title);
+        originalTitleDiv.appendChild(originalTitle);
+        authorDiv.appendChild(author);
+        isbnDiv.appendChild(isbn);
+    }
+
+
+    //if the encountered book is not in the collection array yet, add it to the collection
+    if (!collection.includes(t)) {
+
+        let collectionContainer = document.querySelector("#collectionContainer");
+
+        //switch the collection container's display just once  
+        if (collection.length < 1) {
+            collectionContainer.style.display = "block";
+        }
+
+        collection.push(t);
+
+
+
+        //make a new div for the collected book
+        //append it to the collection div
+        let collectionDiv = document.createElement("div");
+        collectionDiv.innerHTML = t;
+
+        collectionContainer.appendChild(collectionDiv);
+    }
+
+}
+
+function clearBookInfo() {
+    let container = document.querySelector("#infoContainer");
+    container.style.display = "none";
+
+    let divs = document.querySelector("#info").children;
+    for (let d of divs) {
+        d.innerHTML = "";
+    }
+}
+
+
+

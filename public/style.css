@@ -1,6 +1,46 @@
+html{
+    font-family: Helvetica, sans-serif;
+}
+
 #webgl{
     z-index: -1;
     position:fixed;
     left:0px;
     top:0px;
+}
+
+#infoContainer{
+    display: none;
+    position:fixed;
+
+    padding:10px;
+    width:400px;
+    height:200px;
+    bottom:300px;
+    right:20px;
+
+    background-color: rgba(255, 255, 255, 0.75);
+    /* border: 1px dotted black; */
+    border-radius: 10px;
+    
+}
+
+#title{
+    font-weight: bold;
+}
+
+#collectionContainer{
+    display:none;
+    position:fixed;
+
+    padding:10px;
+    width:200px;
+    max-height: 300px;
+
+    bottom:50px;
+
+    background-color: rgba(0, 0, 0, 0.25);
+    color:white;
+
+
 }
