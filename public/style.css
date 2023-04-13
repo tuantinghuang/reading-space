@@ -70,7 +70,7 @@ button{
     margin:0px;
 }
 #enterWorld{
-
+z-index: 10;
     border:0px;
     position:fixed;
     bottom:50px;

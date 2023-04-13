@@ -3,11 +3,15 @@ welcome instruction
 btn for world map
 
  */
-
-document.getElementById('worldmapbtn').onclick = function () {
-    location.href = "./worldmap.html"
+if (document.getElementById('worldmapbtn')) {
+    document.getElementById('worldmapbtn').addEventListener('click', function () {
+        location.href = "./worldmap.html"
+    });
 }
 
-document.getElementById('enterWorld').onclick = function () {
-    location.href = './book.html';
+if (document.getElementById('enterWorld')) {
+    document.getElementById('enterWorld').addEventListener('click', function () {
+        console.log('button clicked')
+        location.href = './book.html';
+    });
 }
