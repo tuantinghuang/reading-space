@@ -16,7 +16,12 @@ export class Book {
         });
 
         this.book = new THREE.Mesh(model.geometry, bookMat);
-        group.add(this.book);
+        if (group) {
+
+            group.add(this.book);
+
+        }
+
 
         this.book.position.set(x, y - 0.5, z)
         this.book.scale.set(0.3, 0.3, 0.1);

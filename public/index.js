@@ -10,11 +10,25 @@ let controller, controllerBox;
 let controllerOldPosition = new THREE.Vector3();
 let books = [];
 let portals = [];
-let bookGroup, bookModel, portalGroup;
+let bookGroup, gateModel, portalGroup;
+
+
+let welcomeScene, activeScene;
+let bigBookGroup, bookModel;
 
 
 function init() {
     scene = new THREE.Scene();
+    welcomeScene = new THREE.Scene();
+    //welcomeScene.background = new THREE.Color(0xEEF3F5);
+
+    if (window.location.pathname.endsWith('book.html')) {
+        activeScene = scene;
+    } else {
+        activeScene = welcomeScene;
+    }
+
+
     renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -24,7 +38,7 @@ function init() {
     canvas.setAttribute('id', 'webgl');
     document.body.appendChild(canvas);
 
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 10, 10);
     controls = new OrbitControls(camera, renderer.domElement);
 
@@ -32,11 +46,13 @@ function init() {
     gridhelper.position.set(0, -0.2, 0)
     //scene.add(gridhelper);
 
+    createWelcomePageComponents();
+    callModel();
     createBoard();
     createController();
     createBooks();
     createPortals();
-    callModel();
+
 
     //light
     let light = new THREE.AmbientLight(0xffffff, 0.8);
@@ -51,20 +67,48 @@ function init() {
 function callModel() {
     let objLoader = new OBJLoader();
     objLoader.load('assets/model/model.obj', function (object) {
+        gateModel = object;
+
+        console.log('gate model loaded!');
+
+        getData(gateModel.children[0]);
+    });
+
+    objLoader.load('assets/model/Book_OBJ.obj', function (object) {
         bookModel = object;
+        console.log('book model loaded');
 
-        console.log('book model loaded!');
-
-        getData(bookModel.children[0]);
+        createBigBook();
     });
 }
 
+function createWelcomePageComponents() {
+    //light
+    let light = new THREE.AmbientLight(0xffffff, 0.8);
+    welcomeScene.add(light);
+
+    let dir_light = new THREE.DirectionalLight(0xffffff, 0.2);
+    dir_light.position.set(10, 3, 3);
+    dir_light.castShadow = true;
+    welcomeScene.add(dir_light);
+
+    bigBookGroup = new THREE.Group();
+    welcomeScene.add(bigBookGroup);
+}
+
+
+//welcome page's big book
+function createBigBook() {
+    bookModel.scale.set(10, 10, 10);
+    bookModel.position.set(1.5, -8.45, 0)
+    bigBookGroup.add(bookModel);
+}
 
 
 function createBoard() {
     let boardTexture = new THREE.TextureLoader().load('assets/grid-01.png');
-    let boardGeo = new THREE.BoxGeometry(100, 1, 100);
-    let boardMat = new THREE.MeshLambertMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+    let boardGeo = new THREE.BoxGeometry(100, 0.5, 100);
+    let boardMat = new THREE.MeshLambertMaterial({ color: 0xffffff, side: THREE.DoubleSide });
     let board = new THREE.Mesh(boardGeo, [boardMat, new THREE.MeshLambertMaterial({
         color: 0xefefef,
         bumpMap: boardTexture,
@@ -72,7 +116,21 @@ function createBoard() {
     })]);
     board.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
     board.position.set(0, -0.7, 0);
+
     scene.add(board);
+
+
+    //welcome page
+    let wboardGeo = new THREE.BoxGeometry(60, 0.5, 100);
+    let wBoard = new THREE.Mesh(wboardGeo, [boardMat, new THREE.MeshLambertMaterial({
+        color: 0xffffff,
+        bumpMap: boardTexture,
+        bumpScale: 0.1,
+    })]);
+    wBoard.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
+    wBoard.position.set(0, -0.7, 0);
+
+    bigBookGroup.add(wBoard);
 }
 
 function createController() {
@@ -112,20 +170,24 @@ async function getData(model) {
     let data = await response.json();
 
     if (data.length > 0) {
-
+        console.log('get book data!')
         for (let i = 0; i < data.length; i++) {
             //translate to center baord size
-            let x = Math.floor(getRandomArbitrary(-50, 50));
+            let x = Math.floor(getRandomArbitrary(-28, 28));
             if (x % 2 == 1) x++;
 
             let z = Math.floor(getRandomArbitrary(-50, 50));
             if (z % 2 == 1) z++;
 
-            let b = new Book(x, 0.5, z, scene, model);
+            let b = new Book(x, 0.2, z, bookGroup, model);
             b.book.userData = data[i];
-
             books.push(b);
+
+            let b_clone = new Book(x, 0.2, z, undefined, model);
+            bigBookGroup.add(b_clone.book);
+
         }
+
     }
 }
 
@@ -133,6 +195,17 @@ async function getData(model) {
 
 
 window.addEventListener('keydown', checkCollision);
+
+window.addEventListener('resize', onWindowResize, false);
+
+function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+}
 
 function moveController(e) {
 
@@ -231,14 +304,19 @@ function checkCollision(e) {
 
 
 function render() {
-    const cameraOffset = new THREE.Vector3(10, 10, 10); // NOTE Constant offset between the camera and the target
-    camera.position.copy(controller.position).add(cameraOffset);
-    camera.lookAt(controller.position)
-    camera.updateProjectionMatrix();
+    if (activeScene == scene) {
+        const cameraOffset = new THREE.Vector3(10, 10, 10); // NOTE Constant offset between the camera and the target
+        camera.position.copy(controller.position).add(cameraOffset);
+        camera.lookAt(controller.position)
+        camera.updateProjectionMatrix();
+    }
 
-
-    renderer.render(scene, camera);
+    bigBookGroup.rotateY(0.001);
+    renderer.render(activeScene, camera);
+    //renderer.render(scene, camera);
     requestAnimationFrame(render);
+
+
 }
 
 init();
@@ -249,6 +327,13 @@ render();
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+/*
+
+------------------------------------------Welcome Page JAVASCRIPT ------------------------------------
+
+*/
+
 
 /*
 
