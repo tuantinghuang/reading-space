@@ -1,24 +1,16 @@
 const express = require('express');
-const path = require('path');
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, 'public')));
 
 const app = express();
-const port = process.env.PORT || 8080;
+app.use(express.static("public")); // this line tells the express app to 'serve' the public folder to clients
 
-app.use(express.static(path.join(__dirname, 'public')));
+// HTTP will expose our server to the web
+const http = require("http").createServer(app);
 
-// app.all('/*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'public'));
-// });
-
-console.log(__dirname)
-
-let server = app.listen(port);
-console.log('Server started at http://localhost:' + port);
-
-
-
-
-
+// start our server listening on port 8080 for now (this is standard for HTTP connections)
+const server = app.listen(8080);
+console.log("Server is running on http://localhost:8080");
 
 /////SOCKET.IO///////
 const io = require("socket.io")().listen(server);

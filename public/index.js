@@ -21,6 +21,8 @@ let welcomeGroup, bigBookGroup, bookModel;
 let topCamera, activeCamera;
 let raycaster, pointer, INTERSECTED;
 
+let socket;
+
 
 function init() {
     scene = new THREE.Scene();
@@ -53,6 +55,8 @@ function init() {
     let gridhelper = new THREE.GridHelper(100, 100);
     gridhelper.position.set(0, -0.2, 0)
     //scene.add(gridhelper);
+
+    establishWebsocketConnection();
 
     initWelcomePageComponents();
     initWorldmapComponents();
@@ -551,3 +555,31 @@ function clearBookInfo() {
     addBtn.innerHTML = '+ Add to collection'
 }
 
+
+
+
+//-----------------------SOCKET CLIENT SIDE -------------------------------------
+
+function establishWebsocketConnection() {
+    socket = io();
+
+    socket.on("msg", (msg) => {
+        console.log(
+            "Got a message from friend with ID ",
+            msg.from,
+            "and data:",
+            msg.data
+        );
+
+    });
+
+    // document.addEventListener(
+    //   "keyup",
+    //   (ev) => {
+    //     if (ev.key === "t") {
+    //       socket.emit("msg", Date.now());
+    //     }
+    //   },
+    //   false
+    // );
+}
