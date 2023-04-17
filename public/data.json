@@ -2,240 +2,362 @@
     {
         "title": "The White Book",
         "author": "Han Kang",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "An ode that feels like moonlight, with a texture like grains of snow. Precious and temporary.",
+        "undefined": "Trondheim"
     },
     {
         "title": "Men Without Women",
         "author": "Haruki Murakami",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "Full of male perspectives but somehow these perspectives saddened me. ",
+        "undefined": "Trondheim"
     },
     {
         "title": "In Praise of the Stepmother",
         "author": "Mario Vargas Ilosa",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "Sensual and vivid, ironic and hilarious. Describing bodily phemonena so intentionally, does it elevate the experience?",
+        "undefined": "Trondheim"
     },
     {
-        "title": "Sylvia Plath",
-        "author": "The Bell Jar",
-        "isbn": "0"
+        "title": "The Bell Jar",
+        "author": "Sylvia Plath",
+        "isbn": "0",
+        "thoughts": "Intense, fictional and dramatic, but reflected so many aspects of one of the paths in real life.",
+        "undefined": "Trondheim"
     },
     {
         "title": "Against Interpretation",
         "author": "Susan Sontag",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "My first and favorite Sontag book. Recommended by someone very dear to me. This book opens my world to fine arts and how I regard them, as well as my relationship with this angel person.",
+        "undefined": "Trondheim"
     },
     {
         "title": "As Consciousness is Harnessed to Flesh",
         "author": "Susan Sontag",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "I read this after my friend passed away. It was painfully close to my experience then. I can feel pain and resistence in her words. Admirable persistence.",
+        "undefined": "Trondheim"
     },
     {
         "title": "Weight of the Earth",
         "author": "David Wojnarowicz",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "This book is transcribed from his audio tape recorder. Somehow talking feels more genuine than writing. No time to think, to cross out what you said, it comes out as is.",
+        "undefined": "Berlin"
     },
     {
         "title": "Faculty of Dreams",
         "author": "Sara Stridsberg",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "Friend's recommendation. Did not like it, because I couldn't get myself to buy in the drama and insanity of the main character. The insanity felt like pure suffer.",
+        "undefined": "Trondheim"
     },
     {
         "title": "比霧更深的地方",
         "author": "張惠菁",
-        "isbn": "9789863596349"
+        "isbn": "9789863596349",
+        "thoughts": "Soft essays on art and life. It was my first Chinese book in 8 months after living in Norway. It felt soft, just like Taiwan, just like Madarin.",
+        "undefined": "Taipei"
     },
     {
         "title": "Bergeners",
         "author": "Tomas Espedal",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "My first Espedal's. He wrote about how he wrote, mixing fictions with his first perspective. I can feel the afternoon sun shining into a hotel room in southern Italy reading this.",
+        "undefined": "Trondheim"
     },
     {
         "title": "A Brief History of Time",
         "author": "Stephen Hawking",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "So fascinating, yet each chapter took me two hours to truly comprehend. When thinking of time this way, life opens up like a sweeping meander.",
+        "undefined": "Trondheim"
     },
     {
         "title": "Talking to Women",
         "author": "Nell Dunn",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "Reading women's words from different era makes me feel unease. The collective belief seemed out of balance, yet with another sense of simplicity that we have lost.",
+        "undefined": "Trondheim"
     },
     {
         "title": "挪威的森林（上）",
-        "author": "村上春樹",
-        "isbn": "0"
+        "translatedTitle": "Norwegian Wood I",
+        "author": "村上春樹 Haruki Murakami",
+        "isbn": "0",
+        "x": 0,
+        "y": 2,
+        "thoughts": "My entry to Japanese literature. I remember love reading as a kid, but I almost paused entirely during my teenage years. This book brought me back to reading, and introduced sorrow to young Tuan. ",
+        "undefined": "Taipei"
     },
     {
         "title": "挪威的森林（下）",
-        "author": "村上春樹",
-        "isbn": "0"
+        "translatedTitle": "Norwegian Wood II",
+        "author": "村上春樹 Haruki Murakami",
+        "isbn": "0",
+        "x": 1,
+        "y": 4,
+        "thoughts": "I've never seen a book series divided in such an elegant and smooth way. The first and second half felt like mirrors to themselves, as I was transforming with the main character.",
+        "undefined": "Taipei"
     },
     {
         "title": "直到長出青苔",
-        "author": "杉本博司",
-        "isbn": "9868597986"
+        "translatedTitle": "苔のむすまで",
+        "author": "杉本博司 Hiroshi Sugimoto",
+        "isbn": "9868597986",
+        "x": -10,
+        "y": 8,
+        "thoughts": "Thick and solid. A calm, personal voice brushing through human's existence, history, and time. Like Sugimoto's photography, this book is direct yet with tenderness.",
+        "undefined": "Taipei"
     },
     {
         "title": "陰翳禮讚",
-        "author": "谷崎潤一郎",
-        "isbn": "9789862350614"
+        "translatedTitle": "In Praise of Shadow",
+        "author": "谷崎潤一郎 Jun'ichirō Tanizaki",
+        "isbn": "9789862350614",
+        "x": -8,
+        "y": 10,
+        "thoughts": "Subtlety of darkness, and how darkness introduce softness and perspectives to our daily life. Especially loved the bathroom chapter.",
+        "undefined": "Taipei"
     },
     {
         "title": "戀人絮語",
-        "author": "羅蘭巴特",
-        "isbn": "9862720077"
+        "translatedTitle": "A Lover's Discourse: Fragments",
+        "author": "Roland Barthes",
+        "isbn": "9862720077",
+        "thoughts": "A book full of subtle butterflies.",
+        "undefined": "Taipei"
     },
     {
         "title": "液態之愛",
+        "translatedTitle": "Liquid Love: On the Frailty of Human Bonds",
         "author": "Zygmunt Bauman",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "A reflection of how modern people are stuck in their own traps, in the meantime enjoyed being trapped together yet lonelily.",
+        "undefined": "Taipei"
     },
     {
         "title": "金閣寺",
-        "author": "三島由紀夫",
-        "isbn": "0"
+        "translatedTitle": "The Temple of the Golden Pavilion",
+        "author": "三島由紀夫 Mishima Yukio",
+        "isbn": "0",
+        "thoughts": "Intense, just as Yukio's portrait taken by Eikoh Hosoe. He is very consistent in this sense, disciplined, strong in belief, with a touch of fantasy.",
+        "undefined": "Taipei"
     },
     {
         "title": "東方與西方",
         "author": "黃天麟",
-        "isbn": "0"
+        "isbn": "957551565X",
+        "thoughts": "This book might be an over-simplified categorization and making sense of the difference between the east and the west. However, reading this from an asian-centric perspective felt refreshing to me after reading so many european-centric culture analysis. Afterall, sociology is a reflection of belief and perspective. It's hard to talk about what you cannot see.",
+        "undefined": "Taipei"
     },
     {
         "title": "The Unbearable Lightness of Being",
+        "translatedTitle": "生命不可承受之輕",
         "author": "Milan Kundera",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "白河夜船",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "translatedTitle": "Asleep",
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 3,
+        "y": 6,
+        "undefined": "Taipei"
     },
     {
         "title": "斜陽",
-        "author": "太宰治",
-        "isbn": "0"
+        "translatedTitle": "The Setting Sun",
+        "author": "太宰治 Osamu Dazai",
+        "isbn": "0",
+        "x": 4,
+        "y": 10,
+        "thoughts": "A slow grievance over a long period of time. Compared to Dazai's No Longer Human, this book is significantly softer with the same depth of bearing.",
+        "undefined": "Taipei"
     },
     {
         "title": "思考的蘆葦",
-        "author": "太宰治",
-        "isbn": "0"
+        "author": "太宰治 Osamu Dazai",
+        "isbn": "0",
+        "x": -1,
+        "y": 10,
+        "thoughts": "A collection of essays on Dazai's inner thoughts, regarding his own existence as a human being. What is confidence, where does it come from? Who is considered as a success and who a failure? Thoughts that position our stances in the world. It depicted clear context and personality to me after reading several of his novels.",
+        "undefined": "Taipei"
     },
     {
         "title": "三詩人書",
         "author": "Maria Rainer Rilke",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "人類動物園",
         "author": "Desmond Morris",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "幸福建築",
+        "translatedTitle": "The Architecture of Happiness",
         "author": "Alan De Botton",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "How does a building, a street speaks to us, to our surroundings?",
+        "undefined": "Taipei"
     },
     {
         "title": "真原醫",
         "author": "楊定一",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "土星座下",
+        "translatedTitle": "Under the Sign of Saturn",
         "author": "Susan Sontag",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Trondheim"
     },
     {
         "title": "脆弱的力量",
         "author": "Brene Brown",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "最重要的日常",
         "author": "山下英子、自凝心平",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "一個人的好天氣",
-        "isbn": "0"
+        "translatedTitle": "ひとり日和, \"A Perfect Day to Be Alone\"",
+        "author": "青山七惠 Nanae Aoyama",
+        "isbn": "0",
+        "thoughts": "I gained strength and comfort from this book. Time that was shared among myself can also be precious and self-justified. This book and \"Park Life\", both as a Akutagawa Prize winner, reflected the modern connection of society.",
+        "undefined": "Taipei"
     },
     {
         "title": "千羽鶴",
-        "author": "川端康成",
-        "isbn": "0"
-    },
-    {
-        "title": "斜陽",
-        "author": "太宰治",
-        "isbn": "0"
+        "translatedTitle": "Thousand Cranes",
+        "author": "川端康成 Yasunari Kawabata",
+        "isbn": "0",
+        "x": 4,
+        "y": 6,
+        "undefined": "Taipei"
     },
     {
         "title": "魂斷威尼斯",
+        "translatedTitle": "Death In Venice",
         "author": "Thomas Mann",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "A romantic and genuine confession. The love is exaggerated (or maybe not), but the way Mann wrote was very moving as the plot slowly push you through an emotional ride. The subject is pure, as well as the love.",
+        "undefined": "Taipei"
     },
     {
         "title": "世界末日與冷酷異境",
-        "author": "村上春樹",
-        "isbn": "9571313408"
+        "author": "村上春樹 Haruki Murakami",
+        "isbn": "9571313408",
+        "x": 1,
+        "y": -2,
+        "thoughts": "Intelligent fiction! The way Murakami connects two seemingly parellel world was amazing. The trasition and the gradual integration made a satisfying mind game.",
+        "undefined": "Taipei"
     },
     {
         "title": "王國1：仙女座高台",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "9789571342559",
+        "x": 2,
+        "y": 0,
+        "undefined": "Taipei"
     },
     {
         "title": "王國2：悲痛失去事物的影子以及魔法",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 2,
+        "y": -2,
+        "undefined": "Taipei"
     },
     {
         "title": "性的人間",
         "author": "大江健三郎",
-        "isbn": "0"
+        "isbn": "0",
+        "x": -2,
+        "y": -3,
+        "undefined": "Taipei"
     },
     {
         "title": "Illness As Metaphor",
+        "translatedTitle": "疾病的隱喻",
         "author": "Susan Sontag",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "The heaviness of sickness, not only physically but also the labels attached metaphorically. It made me reflect how easily it can be to fall into self indulgent empathy.",
+        "undefined": "Taipei"
     },
     {
         "title": "Magic Mountain",
+        "translatedTitle": "魔山",
         "author": "Thomas Mann",
-        "isbn": "0"
+        "isbn": "0",
+        "thoughts": "This book was difficult to me, in a way it felt like climbing through climaxes and hills. To me, it required a huge amount o f patience as well as determination to go through the plot.",
+        "undefined": "Taipei"
     },
     {
         "title": "公園生活",
-        "author": "吉田修一",
-        "isbn": "0"
+        "translatedTitle": "Park Life",
+        "author": "吉田修一 Shuichi Yoshida",
+        "isbn": "0",
+        "thoughts": "Together with \"A Perfect Day to Be Alone\", they depicted the relationship and distance between modern people. How do you define relationship and what forms the definition of it? The airy space between human connections are fascinatingly written in this book.",
+        "undefined": "Taipei"
     },
     {
         "title": "為什麼設計",
-        "author": "原研哉",
-        "isbn": "0"
+        "translatedTitle": "Dialogue in Design",
+        "author": "原研哉 Kenya Hara, 阿部雅世 Masayo Ave",
+        "isbn": "0",
+        "thoughts": "This collection of dialogue between Kenya and Masayo from Tokyo and Berlin went in depth in the essentials of design, and questioned the reasons of trends, the urgency and importance of design thinking. It read like an exciting lecture yet made me feel short and humbled when questioned the aspects I have never thought of in my design practice.",
+        "undefined": "Taipei"
     },
     {
         "title": "雪國",
-        "author": "川端康成",
-        "isbn": "0"
+        "translatedTitle": "Snow Country",
+        "author": "川端康成 Yasunari Kawabata",
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "理想的下午",
         "author": "舒國治",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "禪學入門",
         "author": "鈴木大拙",
-        "isbn": "0"
+        "isbn": "0",
+        "undefined": "Taipei"
     },
     {
         "title": "苦雨之地",
+        "translatedTitle": "The Land of Little Rain",
         "author": "吳明益",
-        "isbn": "9789869689274"
+        "isbn": "9789869689274",
+        "thoughts": "Fantastical stories of going after mystical creatures in the mountains. The nature was in pain, wounded, while these characters can feel as they hunt. The beleif these characters hold seems fantastical yet it bears so much truth and tenderness that contrasts how little awareness we have in modern society.",
+        "undefined": "Taipei"
     },
     {
         "title": "樹之歌：生物學家對宇宙萬物的哲學思索",
-        "isbn": "9789864773008"
+        "translatedTitle": "The Songs of Trees: Stories from Nature’s Great Connectors",
+        "author": "David George Haskell",
+        "isbn": "9789864773008",
+        "thoughts": "Reading this, I want to feel the leaves and hear the sound of nature so badly. It made me sad how disconnected we are when living in urban jungles while so many things are going on in places where we can't see. And we don't even get a chance to know them while so many are being destroyed and eliminated...The world written here almost sounds like a paradise - to communicate with your family through the thick root of Ceiba trees...what can feel more genuine than this?",
+        "undefined": "Taipei"
     },
     {
         "title": "徒然草",
@@ -244,27 +366,38 @@
     },
     {
         "title": "推測設計",
+        "translatedTitle": "Speculative Everything: Design, Fiction, and Social Dreaming",
         "author": "Anthony Dunne, Fiona Raby",
-        "isbn": "9789869801201"
+        "isbn": "9789869801201",
+        "thoughts": "I learned about this while the studio I worked in was publishing the Chinese version of this book in Taiwan. I got hyped up and spent a year making my speculative design thesis. The ability of social dreaming seemed more urgent than ever, as a counterbalance of all the depression (economical, mental, etc.) and as a practice to regain hope.",
+        "undefined": "Taipei"
     },
     {
         "title": "另一種語言",
+        "translatedTitle": "In Other Words",
         "author": "Jhumpa Lahiri",
-        "isbn": "9789869583565"
+        "isbn": "9789869583565",
+        "thoughts": "Writing is vulnerable, yet writing the experince of learning a foreign language requires another level of honesty and courage. Lahiri approached Italien so genuinely and bravely that her experience read like embracing another body.",
+        "undefined": "Taipei"
     },
     {
         "title": "浮光",
+        "translatedTitle": "Above Flame",
         "author": "吳明益",
-        "isbn": "9789865824150"
+        "isbn": "9789865824150",
+        "thoughts": "Each theme is unfolded in two ways - positive and negative spaces - just like analog films. Ming-Yi's approach to photography was closely connected to his subjects and the city. The photographer moves his camera as well as his physical body through the world to capture what he has seen. Not all images are contemporary, they are mixtures of memories, understandings, and imaginations",
+        "undefined": "Taipei"
     },
     {
         "title": "原子習慣",
+        "translatedTitle": "Atomic Habits",
         "author": "James Clear",
         "isbn": "9789861755267"
     },
     {
         "title": "群鳥",
-        "author": "吉本芭那那",
+        "translatedTitle": "鳥たち, \"Birds\"",
+        "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "9789571375250"
     },
     {
@@ -399,7 +532,9 @@
         "title": "身為職業小說家",
         "translatedTitle": "N/A",
         "author": "Haruki Murakami",
-        "isbn": "0"
+        "isbn": "0",
+        "x": -2,
+        "y": 10
     },
     {
         "title": "An Apprenticeship or The Book of Pleasures",
@@ -429,7 +564,9 @@
         "title": "性意思史",
         "translatedTitle": "N/A",
         "author": "張亦絢",
-        "isbn": "0"
+        "isbn": "0",
+        "x": -2,
+        "y": -2
     },
     {
         "title": "Goodbye, Again",
@@ -464,26 +601,32 @@
     {
         "title": "羽衣",
         "translatedTitle": "N/A",
-        "author": "吉本芭那那",
+        "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0"
     },
     {
         "title": "王國3：秘密的花園",
         "translatedTitle": "N/A",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 2,
+        "y": -4
     },
     {
         "title": "王國4：另一個世界",
         "translatedTitle": "N/A",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 2,
+        "y": -6
     },
     {
         "title": "聽風的歌",
         "translatedTitle": "N/A",
         "author": "村上春樹",
-        "isbn": "0"
+        "isbn": "0",
+        "x": 0,
+        "y": 10
     },
     {
         "title": "我是許涼涼",
@@ -495,7 +638,9 @@
         "title": "愛的不久時：南特／巴黎回憶錄",
         "translatedTitle": "N/A",
         "author": "張亦絢",
-        "isbn": "0"
+        "isbn": "0",
+        "x": -2,
+        "y": 0
     },
     {
         "title": "療癒的飲食與斷食：新時代的個人營養學",
@@ -548,20 +693,26 @@
     {
         "title": "哀愁的預感",
         "translatedTitle": "N/A",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 3,
+        "y": 10
     },
     {
         "title": "蜥蜴",
         "translatedTitle": "N/A",
-        "author": "吉本芭那那",
-        "isbn": "0"
+        "author": "吉本芭那那 Banana Yoshimoto",
+        "isbn": "0",
+        "x": 3,
+        "y": 8
     },
     {
         "title": "思念的長河",
         "translatedTitle": "N/A",
         "author": "三毛",
-        "isbn": "0"
+        "isbn": "0",
+        "x": 4,
+        "y": 12
     },
     {
         "title": "Death By Landscape",
@@ -573,7 +724,9 @@
         "title": "沒有色彩的多崎作和他的巡禮之年",
         "translatedTitle": "N/A",
         "author": "Haruki Murakami",
-        "isbn": "0"
+        "isbn": "0",
+        "x": 2,
+        "y": -3
     },
     {
         "title": "Bliss Montage",

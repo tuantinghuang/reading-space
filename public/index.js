@@ -13,8 +13,13 @@ let portals = [];
 let bookGroup, gateModel, portalGroup;
 
 
+//welcome page elements
 let welcomeScene, activeScene;
-let bigBookGroup, bookModel;
+let welcomeGroup, bigBookGroup, bookModel;
+
+//world map elements
+let topCamera, activeCamera;
+let raycaster, pointer, INTERSECTED;
 
 
 function init() {
@@ -38,15 +43,20 @@ function init() {
     canvas.setAttribute('id', 'webgl');
     document.body.appendChild(canvas);
 
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 10, 10);
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 60, 180);
     controls = new OrbitControls(camera, renderer.domElement);
+
+    activeCamera = camera;
+
 
     let gridhelper = new THREE.GridHelper(100, 100);
     gridhelper.position.set(0, -0.2, 0)
     //scene.add(gridhelper);
 
-    createWelcomePageComponents();
+    initWelcomePageComponents();
+    initWorldmapComponents();
+
     callModel();
     createBoard();
     createController();
@@ -82,7 +92,11 @@ function callModel() {
     });
 }
 
-function createWelcomePageComponents() {
+
+//--------------------------------------Welcome page functions ----------------------------
+
+
+function initWelcomePageComponents() {
     //light
     let light = new THREE.AmbientLight(0xffffff, 0.8);
     welcomeScene.add(light);
@@ -92,8 +106,11 @@ function createWelcomePageComponents() {
     dir_light.castShadow = true;
     welcomeScene.add(dir_light);
 
+    welcomeGroup = new THREE.Group();
     bigBookGroup = new THREE.Group();
-    welcomeScene.add(bigBookGroup);
+    welcomeScene.add(welcomeGroup);
+    welcomeGroup.add(bigBookGroup);
+
 }
 
 
@@ -101,13 +118,92 @@ function createWelcomePageComponents() {
 function createBigBook() {
     bookModel.scale.set(10, 10, 10);
     bookModel.position.set(1.5, -8.45, 0)
-    bigBookGroup.add(bookModel);
+    welcomeGroup.add(bookModel);
 }
 
 
+//--------------------------------------World map functions ----------------------------
+
+function initWorldmapComponents() {
+    topCamera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    topCamera.position.set(0, 110, 0);
+    topCamera.lookAt(0, 0, 0);
+
+    raycaster = new THREE.Raycaster();
+    pointer = new THREE.Vector2();
+
+
+}
+
+window.addEventListener('pointermove', onPointerMove);
+
+
+function onPointerMove(event) {
+
+    // calculate pointer position in normalized device coordinates
+    // (-1 to +1) for both components
+
+    pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+}
+
+
+function renderRaycaster() {
+
+    raycaster.setFromCamera(pointer, topCamera);
+
+    let intersects = raycaster.intersectObjects(bigBookGroup.children, true);
+
+    if (intersects.length > 0) {
+
+
+        if (INTERSECTED != intersects[0].object) {
+            //reset color
+            if (INTERSECTED) {
+                if (INTERSECTED.material.color) {
+                    INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+                }
+
+            }
+            //update intersected object
+            INTERSECTED = intersects[0].object;
+
+
+            if (INTERSECTED.material.color) {
+
+                //save the intersected object current color
+                INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+
+                //then change the color
+                INTERSECTED.material.color.setHex(0xffffff);
+            }
+            console.log(INTERSECTED);
+
+        }
+
+    } else {
+
+        if (INTERSECTED) {
+            if (INTERSECTED.material.color) {
+                //reset the objects color to its original
+                INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+            }
+        }
+        //reset the intersected
+        INTERSECTED = null;
+
+    }
+
+}
+
+
+
+//--------------------------------------Main page functions ----------------------------
+
 function createBoard() {
     let boardTexture = new THREE.TextureLoader().load('assets/grid-01.png');
-    let boardGeo = new THREE.BoxGeometry(100, 0.5, 100);
+    let boardGeo = new THREE.BoxGeometry(60, 0.5, 100);
     let boardMat = new THREE.MeshLambertMaterial({ color: 0xffffff, side: THREE.DoubleSide });
     let board = new THREE.Mesh(boardGeo, [boardMat, new THREE.MeshLambertMaterial({
         color: 0xefefef,
@@ -130,7 +226,7 @@ function createBoard() {
     wBoard.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
     wBoard.position.set(0, -0.7, 0);
 
-    bigBookGroup.add(wBoard);
+    welcomeGroup.add(wBoard);
 }
 
 function createController() {
@@ -154,7 +250,7 @@ function createBooks() {
 
 function createPortals() {
     for (let i = 0; i < 10; i++) {
-        let x = Math.floor(getRandomArbitrary(-50, 50));
+        let x = Math.floor(getRandomArbitrary(-28, 28));
         let z = Math.floor(getRandomArbitrary(-50, 50));
         let p = new Portal(x, 0.1, z, scene);
         portals.push(p);
@@ -170,25 +266,34 @@ async function getData(model) {
     let data = await response.json();
 
     if (data.length > 0) {
-        console.log('get book data!')
-        for (let i = 0; i < data.length; i++) {
-            //translate to center baord size
-            let x = Math.floor(getRandomArbitrary(-28, 28));
-            if (x % 2 == 1) x++;
 
-            let z = Math.floor(getRandomArbitrary(-50, 50));
-            if (z % 2 == 1) z++;
+        for (let i = 0; i < data.length; i++) {
+            let x, z;
+
+            if (data[i].x) {
+                x = data[i].x;
+                z = data[i].y;
+
+            } else {
+                //translate to center baord size
+                x = Math.floor(getRandomArbitrary(-28, 28));
+                if (x % 2 == 1) x++;
+
+                z = Math.floor(getRandomArbitrary(-50, 50));
+                if (z % 2 == 1) z++;
+
+            }
 
             let b = new Book(x, 0.2, z, bookGroup, model);
             b.book.userData = data[i];
             books.push(b);
 
-            let b_clone = new Book(x, 0.2, z, undefined, model);
-            bigBookGroup.add(b_clone.book);
-
+            let b_clone = new Book(x, 0.2, z, bigBookGroup, model);
+            b_clone.book.userData = data[i];
         }
 
     }
+
 }
 
 
@@ -305,14 +410,21 @@ function checkCollision(e) {
 
 function render() {
     if (activeScene == scene) {
-        const cameraOffset = new THREE.Vector3(10, 10, 10); // NOTE Constant offset between the camera and the target
+        const cameraOffset = new THREE.Vector3(0, 5, 10); // NOTE Constant offset between the camera and the target
         camera.position.copy(controller.position).add(cameraOffset);
         camera.lookAt(controller.position)
         camera.updateProjectionMatrix();
     }
 
-    bigBookGroup.rotateY(0.001);
-    renderer.render(activeScene, camera);
+    if (activeCamera == topCamera) {
+        welcomeGroup.rotation.y = 0;
+        renderRaycaster();
+    } else {
+        welcomeGroup.rotateY(0.001);
+    }
+
+
+    renderer.render(activeScene, activeCamera);
     //renderer.render(scene, camera);
     requestAnimationFrame(render);
 
@@ -330,9 +442,16 @@ function getRandomArbitrary(min, max) {
 
 /*
 
-------------------------------------------Welcome Page JAVASCRIPT ------------------------------------
+------------------------------------------World Map Page JAVASCRIPT ------------------------------------
 
 */
+
+if (document.getElementById('worldmapbtn')) {
+    document.getElementById('worldmapbtn').addEventListener('click', function () {
+        activeCamera = topCamera;
+        activeScene = welcomeScene;
+    });
+}
 
 
 /*
@@ -341,8 +460,10 @@ function getRandomArbitrary(min, max) {
 
 */
 let collection = [];
+let addBtn = document.getElementById('addCollectionBtn');
 
 function showBookInfo(id) {
+
     let container = document.querySelector("#infoContainer");
     container.style.display = "block";
     let div = document.querySelector("#info");
@@ -366,17 +487,32 @@ function showBookInfo(id) {
     let isbn = document.createTextNode(i);
     let isbnDiv = document.querySelector("#isbn");
 
+    let th = books[id].book.userData.thoughts;
+    let thoughts = document.createTextNode(th);
+    let thoughtsDiv = document.querySelector("#thoughts");
 
     if (titleDiv.innerHTML == "") {
         titleDiv.appendChild(title);
         originalTitleDiv.appendChild(originalTitle);
         authorDiv.appendChild(author);
         isbnDiv.appendChild(isbn);
+        thoughtsDiv.appendChild(thoughts);
     }
 
 
+    if (collection.includes(t)) {
+        addBtn.innerHTML = 'Added!';
+    }
+
+
+}
+
+addBtn.addEventListener('click', function () {
+    let titleDiv = document.querySelector("#title");
+    let title = titleDiv.innerHTML;
+
     //if the encountered book is not in the collection array yet, add it to the collection
-    if (!collection.includes(t)) {
+    if (!collection.includes(title)) {
 
         let collectionContainer = document.querySelector("#collectionContainer");
 
@@ -385,19 +521,22 @@ function showBookInfo(id) {
             collectionContainer.style.display = "block";
         }
 
-        collection.push(t);
-
-
+        collection.push(title);
 
         //make a new div for the collected book
         //append it to the collection div
         let collectionDiv = document.createElement("div");
-        collectionDiv.innerHTML = t;
+        collectionDiv.innerHTML = title;
 
         collectionContainer.appendChild(collectionDiv);
-    }
 
-}
+    }
+    addBtn.innerHTML = "Added!";
+
+    console.log(collection);
+});
+
+
 
 function clearBookInfo() {
     let container = document.querySelector("#infoContainer");
@@ -407,7 +546,8 @@ function clearBookInfo() {
     for (let d of divs) {
         d.innerHTML = "";
     }
+
+    let addBtn = document.getElementById('addCollectionBtn');
+    addBtn.innerHTML = '+ Add to collection'
 }
-
-
 

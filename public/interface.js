@@ -3,14 +3,10 @@ welcome instruction
 btn for world map
 
  */
-if (document.getElementById('worldmapbtn')) {
-    document.getElementById('worldmapbtn').addEventListener('click', function () {
-        location.href = "./worldmap.html"
-    });
-}
 
-if (document.getElementById('enterWorld')) {
-    document.getElementById('enterWorld').addEventListener('click', function () {
+
+if (document.getElementById('enterWorldBtn')) {
+    document.getElementById('enterWorldBtn').addEventListener('click', function () {
         console.log('button clicked')
         location.href = './book.html';
     });
