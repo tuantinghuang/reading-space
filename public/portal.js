@@ -9,13 +9,14 @@ export class Portal {
         let color = c.concat(hue).concat(', 100%, 50%)');
         let matColor = new THREE.Color(color);
 
-        this.geo = new THREE.BoxGeometry(2, 0.2, 2);
+        this.geo = new THREE.TorusGeometry(0.5, 0.5, 16, 32);
         let mat = new THREE.MeshStandardMaterial({
             emissive: matColor,
             emissiveIntensity: 0.1
         });
         this.mesh = new THREE.Mesh(this.geo, mat);
-        this.mesh.position.set(x, y, z);
+        this.mesh.position.set(x, y - 0.9, z);
+        this.mesh.rotateX(Math.PI / 2);
         group.add(this.mesh);
 
         //calculate the position without the book group's translate
@@ -26,7 +27,7 @@ export class Portal {
         this.box.copy(this.mesh.geometry.boundingBox).applyMatrix4(this.mesh.matrixWorld);
 
         let helper = new THREE.Box3Helper(this.box);
-        group.add(helper);
+        //group.add(helper);
     }
 
     activate() {

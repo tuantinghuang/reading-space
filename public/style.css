@@ -1,6 +1,6 @@
 html{
     font-family: 'Helvetica', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:rgba(0, 0, 0, 0.309);
+    color:rgba(0, 0, 0, 0.8);
     font-weight:100;
     padding:10px;
     margin:5px;
@@ -29,25 +29,28 @@ h1{
     font-weight: 100;
 }
 
+h4{
+    margin-top:0px;
+    margin-bottom:10px;
+}
+
 hr{
     border:0.5px solid white;
 }
 
-button{
-    border:1px solid white;
-    color:white;
+ button{
+    border:1px solid black;
+    color:black;
     border-radius:20px;
     padding-top:5px;
     padding-bottom: 5px;
-    margin:10px;
     text-transform: uppercase;
     background-color: transparent;
 }
 
 button:hover{
     background:rgba(0, 0, 0, 0.15);
-    color:white;
-}
+} 
 
 #background{
     position:fixed;
@@ -89,76 +92,113 @@ button:hover{
 
 #intro{
     width:60vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+    position:fixed;
     font-weight:100;
 }
 
-#quote{
-    font-style: italic;
-}
-
-#enterWorldBtn{
-    color:rgba(0, 0, 0, 0.5);
-    border:1px solid rgba(0, 0, 0, 0.5);
-
-    position:fixed;
-
-    bottom:50px;
-    right:50px;
-    /* transform: translateY(-50%);
-    right:50px; */
-    /* text-align: right; */
-    
-    text-align:center;
-}
 
 
 
-#sideBar{
+
+#instruction, #quote{
     display:none;
-    padding:10px;
-    background-color: white;
     position:fixed;
-    width:36vw;
-    height:90vh;
-    top:4vh;
-    bottom:5vh;
-    left:60vw;
-    border-radius: 20px;
-    border:1px solid rgba(0, 0, 0, 0.25);
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size:2rem;
+}
+
+#instruction, #quote>p{
+    width:60vw;
 }
 
 
 
-#instruction{
-    font-size:1.2rem;
-}
 
 #infoContainer{
-    display: none;
-    position:fixed;
-
-    padding:10px;
-    width:400px;
-    bottom:50px;
-    right:20px;
-    color:rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255);
-    border: 2px solid rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
     
+    position:fixed;
+    width:100vw;
+    height:23vh;
+    margin:0px;
+    padding:10px;
+    left:0px;
+    bottom:0px;
+
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%);
+
+    display:none;
+    grid-template-columns: 3fr 4fr 5fr 1fr;
+    grid-template-areas:
+        "col1 col2 col3 col4";
+ 
 }
+
+#portalContainer{
+    position:fixed;
+    width:100vw;
+    height:10vh;
+    margin:0px;
+    padding:10px;
+    left:0px;
+    bottom:0px;
+
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%);
+
+    display:none;
+    grid-template-columns: 3fr 4fr 5fr 1fr;
+    grid-template-areas:
+        "col1 col2 col3 col4";
+}
+
+.col1, .col2,.col3,.col4{
+    /* border:1px solid red; */
+    padding:10px;
+}
+.col1{
+    grid-area:col1;
+}
+
+.col2{
+    
+    grid-area:col2;
+}
+
+.col3{
+    grid-area:col3;
+}
+
+.col4{
+    grid-area:col4;
+}
+
 #thoughts{
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
-    font-size:0.9rem;
-    margin:30px 20px 30px 20px;
+    line-height: 1.4rem;
 }
 
-
-
-#title{
-    font-weight: bold;
+#cover{
+  height:20vh;
 }
+
+.bottom{
+    position: absolute;
+    bottom: 30px;
+    line-height: 1.8rem;
+}
+
+#addCollectionBtn{
+    color:rgba(0, 0, 0, 0.8);
+    border:1px solid rgba(0, 0, 0, 0.8);
+}
+
 
 #collectionContainer>div{
     
@@ -177,11 +217,7 @@ button:hover{
 
 
 
-#addCollectionBtn{
-    color:rgba(0, 0, 0, 0.5);
-    border:1px solid rgba(0, 0, 0, 0.5);
-    
-}
+
 
 #worldmapbtn{
     display: visible;

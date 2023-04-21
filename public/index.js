@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { Book } from './book.js'
 import { Portal } from './portal.js'
@@ -11,7 +13,7 @@ let controllerOldPosition = new THREE.Vector3();
 let books = [];
 let portals = [];
 let bookGroup, gateModel, portalGroup;
-
+let font;
 
 //welcome page elements
 let welcomeScene, activeScene;
@@ -24,8 +26,12 @@ let raycaster, pointer, INTERSECTED;
 let socket;
 
 
+
 function init() {
+
     scene = new THREE.Scene();
+
+    scene.background = new THREE.Color(0xdddddd);
     welcomeScene = new THREE.Scene();
     //welcomeScene.background = new THREE.Color(0xEEF3F5);
 
@@ -45,7 +51,7 @@ function init() {
     canvas.setAttribute('id', 'webgl');
     document.body.appendChild(canvas);
 
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 2, 1000);
     camera.position.set(0, 60, 180);
     controls = new OrbitControls(camera, renderer.domElement);
 
@@ -55,6 +61,14 @@ function init() {
     let gridhelper = new THREE.GridHelper(100, 100);
     gridhelper.position.set(0, -0.2, 0)
     //scene.add(gridhelper);
+
+
+    let loader = new FontLoader();
+
+    loader.load('assets/helvetiker_regular.typeface.json', function (data) {
+        font = data;
+        console.log('font loaded!')
+    });
 
     establishWebsocketConnection();
 
@@ -385,11 +399,18 @@ function checkCollision(e) {
         controller.position.copy(controllerOldPosition);
 
         if (bookID) {
+            console.log(books[bookID]);
+
             books[bookID].activate();
+            let title = books[bookID].book.userData.title;
+
+            // books[bookID].showTitle(JSON.stringify(title));
             showBookInfo(bookID);
+
         }
         else if (portalID) {
             portals[portalID].activate();
+            showCommentBox();
         }
 
         okToMove *= -1;
@@ -402,6 +423,7 @@ function checkCollision(e) {
         }
         else if (portalID) {
             portals[portalID].reset();
+            clearCommentBox();
             portalID = undefined;
         }
 
@@ -414,7 +436,7 @@ function checkCollision(e) {
 
 function render() {
     if (activeScene == scene) {
-        const cameraOffset = new THREE.Vector3(0, 5, 10); // NOTE Constant offset between the camera and the target
+        const cameraOffset = new THREE.Vector3(0, 1, 8); // NOTE Constant offset between the camera and the target
         camera.position.copy(controller.position).add(cameraOffset);
         camera.lookAt(controller.position)
         camera.updateProjectionMatrix();
@@ -469,31 +491,41 @@ let addBtn = document.getElementById('addCollectionBtn');
 function showBookInfo(id) {
 
     let container = document.querySelector("#infoContainer");
-    container.style.display = "block";
-    let div = document.querySelector("#info");
+    container.style.display = "grid";
 
     let t = books[id].book.userData.title;
     let title = document.createTextNode(t);
     let titleDiv = document.querySelector("#title");
+    titleDiv.innerHTML = "";
 
 
     let originalT = books[id].book.userData.translatedTitle;
     let originalTitle = document.createTextNode(originalT);
     let originalTitleDiv = document.querySelector("#originalTitle");
+    originalTitleDiv.innerHTML = "";
 
 
     let a = books[id].book.userData.author;
     let author = document.createTextNode(a);
     let authorDiv = document.querySelector("#author");
+    authorDiv.innerHTML = "";
+
+    let imgsrc = books[id].book.userData.img;
+    if (imgsrc) {
+        let cover = document.querySelector("#cover");
+        cover.src = imgsrc;
+    }
 
 
     let i = books[id].book.userData.isbn;
     let isbn = document.createTextNode(i);
     let isbnDiv = document.querySelector("#isbn");
+    isbnDiv.innerHTML = "";
 
     let th = books[id].book.userData.thoughts;
     let thoughts = document.createTextNode(th);
     let thoughtsDiv = document.querySelector("#thoughts");
+    thoughtsDiv.innerHTML = "";
 
     if (titleDiv.innerHTML == "") {
         titleDiv.appendChild(title);
@@ -546,17 +578,22 @@ function clearBookInfo() {
     let container = document.querySelector("#infoContainer");
     container.style.display = "none";
 
-    let divs = document.querySelector("#info").children;
-    for (let d of divs) {
-        d.innerHTML = "";
-    }
+    let cover = document.querySelector("#cover");
+    cover.src = "";
 
     let addBtn = document.getElementById('addCollectionBtn');
-    addBtn.innerHTML = '+ Add to collection'
+    addBtn.innerHTML = '+ Add to collection';
 }
 
+function showCommentBox() {
+    let containerDiv = document.getElementById('portalContainer');
+    containerDiv.style.display = 'grid';
+}
 
-
+function clearCommentBox() {
+    let containerDiv = document.getElementById('portalContainer');
+    containerDiv.style.display = 'none';
+}
 
 //-----------------------SOCKET CLIENT SIDE -------------------------------------
 

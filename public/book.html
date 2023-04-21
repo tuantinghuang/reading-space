@@ -7,24 +7,35 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source Code Pro"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <div id="infoContainer">
-      <div id="info">
-        <div id="title"></div>
-
-        <p id="originalTitle"></p>
-
-        <p id="author"></p>
-
-        <p id="isbn"></p>
-
-        <p id="cover"></p>
-
-        <p id="thoughts"></p>
+      <div class="col1">
+        <img id="cover" src="" />
       </div>
-      <button id="addCollectionBtn">+ Add to collection</button>
+      <div class="col2">
+        <div class="upper">
+          <h4 id="title"></h4>
+          <div id="originalTitle"></div>
+        </div>
+
+        <div class="bottom">
+          <div id="author"></div>
+          <div id="isbn"></div>
+        </div>
+      </div>
+      <div class="col3">
+        <div id="thoughts"></div>
+        <button class="bottom" id="addCollectionBtn">
+          + Add to collection
+        </button>
+      </div>
+      <div class="col4"></div>
     </div>
 
     <div id="collectionContainer">
@@ -32,6 +43,21 @@
       <button id="downloadBtn">download</button>
     </div>
     <button id="worldmapbtn">world map</button>
+
+    <div id="portalContainer">
+      <div class="col1">Whisper your thoughts...?</div>
+      <div class="col2">
+        <label>Comments:</label>
+        <input id="comment" type="text" />
+      </div>
+      <div class="col3">
+        <label>Name:</label>
+        <input id="commenter" type="text" />
+      </div>
+      <div class="col4">
+        <button id="submitCommentBtn">submit</button>
+      </div>
+    </div>
 
     <script type="importmap">
       {
