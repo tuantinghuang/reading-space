@@ -12,7 +12,7 @@ export class Book {
         let color = c.concat(hue).concat(', 100%, 90%)');
         let matColor = new THREE.Color(color);
 
-        this.bookMat = new THREE.MeshBasicMaterial({
+        this.bookMat = new THREE.MeshLambertMaterial({
             color: matColor,
         });
 
@@ -20,7 +20,8 @@ export class Book {
         this.group = group;
         this.group.add(this.book);
 
-
+        this.book.castShadow = true;
+        this.book.receiveShadow = false;
 
         this.book.position.set(x, y - 0.5, z)
         this.book.scale.set(0.3, 0.3, 0.1);

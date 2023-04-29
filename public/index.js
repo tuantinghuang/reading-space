@@ -13,6 +13,7 @@ let controllerOldPosition = new THREE.Vector3();
 let books = [];
 let portals = [];
 let bookGroup, gateModel, portalGroup;
+let particleGroup;
 let font;
 
 //welcome page elements
@@ -46,21 +47,18 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     document.body.appendChild(renderer.domElement);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     let canvas = renderer.domElement;
     canvas.setAttribute('id', 'webgl');
     document.body.appendChild(canvas);
 
-    camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 2, 1000);
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 3, 1000);
     camera.position.set(0, 60, 180);
     controls = new OrbitControls(camera, renderer.domElement);
 
     activeCamera = camera;
-
-
-    let gridhelper = new THREE.GridHelper(100, 100);
-    gridhelper.position.set(0, -0.2, 0)
-    //scene.add(gridhelper);
 
 
     let loader = new FontLoader();
@@ -75,6 +73,7 @@ function init() {
     initWelcomePageComponents();
     initWorldmapComponents();
 
+    createParticles();
     callModel();
     createBoard();
     createController();
@@ -83,13 +82,26 @@ function init() {
 
 
     //light
-    let light = new THREE.AmbientLight(0xffffff, 0.8);
+    let light = new THREE.AmbientLight(0xffffff, 1);
     scene.add(light);
 
     let dir_light = new THREE.DirectionalLight(0xffffff, 0.1);
-    dir_light.position.set(10, 3, 3);
+
+    dir_light.position.set(10, 100, 100);
     dir_light.castShadow = true;
+
+
+    dir_light.shadow.camera.top = 50;
+    dir_light.shadow.camera.right = 30;
+    dir_light.shadow.camera.bottom = -50;
+    dir_light.shadow.camera.left = -30;
+    dir_light.shadow.camera.far = 200;
+
     scene.add(dir_light);
+
+    // const helper = new THREE.CameraHelper(dir_light.shadow.camera);
+    // scene.add(helper);
+
 }
 
 function callModel() {
@@ -116,13 +128,20 @@ function callModel() {
 
 function initWelcomePageComponents() {
     //light
-    let light = new THREE.AmbientLight(0xffffff, 0.8);
+    let light = new THREE.AmbientLight(0xffffff, 1);
     welcomeScene.add(light);
 
-    let dir_light = new THREE.DirectionalLight(0xffffff, 0.2);
-    dir_light.position.set(10, 3, 3);
+    let dir_light = new THREE.DirectionalLight(0xffffff, 0.1);
+    dir_light.position.set(10, 100, 100);
     dir_light.castShadow = true;
+    dir_light.shadow.camera.top = 50;
+    dir_light.shadow.camera.right = 30;
+    dir_light.shadow.camera.bottom = -50;
+    dir_light.shadow.camera.left = -30;
+    dir_light.shadow.camera.far = 200;
     welcomeScene.add(dir_light);
+
+
 
     welcomeGroup = new THREE.Group();
     bigBookGroup = new THREE.Group();
@@ -131,11 +150,76 @@ function initWelcomePageComponents() {
 
 }
 
+function createParticles() {
+    particleGroup = new THREE.Group();
+    scene.add(particleGroup);
+
+    const geometry = new THREE.BufferGeometry();
+    const vertices = [];
+    let materials = [];
+
+    // const textureLoader = new THREE.TextureLoader();
+
+
+    for (let i = 0; i < 1000; i++) {
+
+        const x = Math.random() * 2000 - 1000;
+        const y = Math.random() * 2000 - 1000;
+        const z = Math.random() * 2000 - 1000;
+
+        vertices.push(x, y, z);
+
+    }
+
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+    let parameters = [
+        [[0.5, 0.2, 0.1], 5],
+        [[0.45, 0.5, 0.1], 4],
+        [[0.40, 0.5, 0.1], 3],
+        [[0.35, 0.3, 0.1], 2],
+        [[0.30, 0.3, 0.1], 1]
+    ];
+
+    for (let i = 0; i < parameters.length; i++) {
+
+        const color = parameters[i][0];
+        const size = parameters[i][1];
+
+        materials[i] = new THREE.PointsMaterial({
+            size: size,
+            blending: THREE.AdditiveBlending,
+            depthTest: false,
+            transparent: true
+        });
+        materials[i].color.setHSL(color[0], color[1], color[2]);
+
+        const particles = new THREE.Points(geometry, materials[i]);
+
+        particles.rotation.x = Math.random() * 6;
+        particles.rotation.y = Math.random() * 6;
+        particles.rotation.z = Math.random() * 6;
+
+        particleGroup.add(particles);
+
+    }
+
+
+}
+
 
 //welcome page's big book
 function createBigBook() {
     bookModel.scale.set(10, 10, 10);
-    bookModel.position.set(1.5, -8.45, 0)
+    bookModel.position.set(1.5, -8.45, 0);
+    bookModel.traverse(function (child) {
+
+        if (child.isMesh) {
+
+            child.material.color = new THREE.Color(0xcccccc);
+        }
+
+    });
     welcomeGroup.add(bookModel);
 }
 
@@ -220,30 +304,35 @@ function renderRaycaster() {
 //--------------------------------------Main page functions ----------------------------
 
 function createBoard() {
-    let boardTexture = new THREE.TextureLoader().load('assets/grid-01.png');
+    let boardTexture = new THREE.TextureLoader().load('assets/grid-01.png', function () {
+        boardTexture.wrapS = boardTexture.wrapT = THREE.RepeatWrapping;
+        boardtexture.offset.set(0, 0);
+        boardTexture.repeat.set(2, 2);
+    });
     let boardGeo = new THREE.BoxGeometry(60, 0.5, 100);
-    let boardMat = new THREE.MeshLambertMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+    let boardMat = new THREE.MeshLambertMaterial({ color: 0xcccccc, side: THREE.DoubleSide });
     let board = new THREE.Mesh(boardGeo, [boardMat, new THREE.MeshLambertMaterial({
-        color: 0xefefef,
+        color: 0xcccccc,
         bumpMap: boardTexture,
         bumpScale: 10,
     })]);
     board.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
     board.position.set(0, -0.7, 0);
-
+    board.receiveShadow = true;
+    board.castShadow = false;
     scene.add(board);
 
 
     //welcome page
-    let wboardGeo = new THREE.BoxGeometry(60, 0.5, 100);
+    let wboardGeo = new THREE.BoxGeometry(60, 0.8, 100);
     let wBoard = new THREE.Mesh(wboardGeo, [boardMat, new THREE.MeshLambertMaterial({
-        color: 0xffffff,
+        color: 0xcccccc,
         bumpMap: boardTexture,
         bumpScale: 0.1,
     })]);
     wBoard.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
     wBoard.position.set(0, -0.7, 0);
-
+    wBoard.receiveShadow = true;
     welcomeGroup.add(wBoard);
 }
 
@@ -256,7 +345,7 @@ function createController() {
     controllerBox = new THREE.Box3();
 
     let helper = new THREE.Box3Helper(controllerBox);
-    scene.add(helper);
+    //scene.add(helper);
 }
 
 
@@ -317,7 +406,7 @@ async function getData(model) {
 
 
 
-window.addEventListener('keydown', checkCollision);
+window.addEventListener('keydown', checkKeyPressed);
 
 window.addEventListener('resize', onWindowResize, false);
 
@@ -358,8 +447,15 @@ function moveController(e) {
 let bookID = undefined;
 let portalID = undefined;
 
+function checkKeyPressed(e) {
+    if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
+        checkCollision(e);
+    }
+}
+let prevKey = '';
 function checkCollision(e) {
     let okToMove = 1;
+
 
 
     //save the preivous controller position
@@ -384,28 +480,60 @@ function checkCollision(e) {
         }
     }
 
-
+    //loop through portals
     for (let i = 0; i < portals.length; i++) {
         portals[i].box.copy(portals[i].mesh.geometry.boundingBox).applyMatrix4(portals[i].mesh.matrixWorld);
-
         if (controllerBox.intersectsBox(portals[i].box)) {
             okToMove *= -1;
             portalID = i;
         }
     }
+
     console.log(okToMove)
 
+    //if collided show info card
     if (okToMove < 0) {
+        //keep the controller at the old position
         controller.position.copy(controllerOldPosition);
 
+        //if it collided with a book
         if (bookID) {
-            console.log(books[bookID]);
+            //if the arrow keys are up or down
+            if (e.keyCode == "38" || e.keyCode == "40") {
 
-            books[bookID].activate();
-            let title = books[bookID].book.userData.title;
+                //show info card
+                books[bookID].activate();
+                let title = books[bookID].book.userData.title;
 
-            // books[bookID].showTitle(JSON.stringify(title));
-            showBookInfo(bookID);
+                // books[bookID].showTitle(JSON.stringify(title));
+                showBookInfo(bookID);
+
+                //show the hint if they past the door, they collect the book
+
+
+                //if the keycode is the same as the prev key (still up or down), let it move
+                if (e.keyCode == prevKey) {
+
+                    if (prevKey == "38") {
+                        //move controller
+                        moveController(e);
+                        //collect book
+                        addtoCollection();
+
+                    } else {
+                        moveController(e);
+
+                        //collect book
+                        addtoCollection();
+                    }
+                    prevKey = "";
+
+                }
+
+                //save this keycode
+                prevKey = e.keyCode;
+
+            }
 
         }
         else if (portalID) {
@@ -435,8 +563,12 @@ function checkCollision(e) {
 
 
 function render() {
+
+    const time = Date.now() * 0.00005;
+
+
     if (activeScene == scene) {
-        const cameraOffset = new THREE.Vector3(0, 1, 8); // NOTE Constant offset between the camera and the target
+        const cameraOffset = new THREE.Vector3(0, 3, 8); // NOTE Constant offset between the camera and the target
         camera.position.copy(controller.position).add(cameraOffset);
         camera.lookAt(controller.position)
         camera.updateProjectionMatrix();
@@ -449,6 +581,20 @@ function render() {
         welcomeGroup.rotateY(0.001);
     }
 
+    //move particle systems
+
+    for (let i = 0; i < particleGroup.children.length; i++) {
+
+        const object = particleGroup.children[i];
+
+        if (object instanceof THREE.Points) {
+
+            // object.rotation.x = time * (i < 4 ? i + 1 : - (i + 1)) ;
+            object.position.y += Math.sin(time * 10) * 0.1;
+
+        }
+
+    }
 
     renderer.render(activeScene, activeCamera);
     //renderer.render(scene, camera);
@@ -543,7 +689,9 @@ function showBookInfo(id) {
 
 }
 
-addBtn.addEventListener('click', function () {
+addBtn.addEventListener('click', addtoCollection);
+
+function addtoCollection() {
     let titleDiv = document.querySelector("#title");
     let title = titleDiv.innerHTML;
 
@@ -554,7 +702,7 @@ addBtn.addEventListener('click', function () {
 
         //switch the collection container's display just once  
         if (collection.length < 1) {
-            collectionContainer.style.display = "block";
+            //collectionContainer.style.display = "block";
         }
 
         collection.push(title);
@@ -562,15 +710,20 @@ addBtn.addEventListener('click', function () {
         //make a new div for the collected book
         //append it to the collection div
         let collectionDiv = document.createElement("div");
+        collectionDiv.className = "collectionBookTitle";
+
         collectionDiv.innerHTML = title;
+        let deleteBtn = document.createElement("button");
+        deleteBtn.className = "deleteCollectionBtn";
+        deleteBtn.innerHTML = "delete";
+        collectionDiv.appendChild(deleteBtn);
 
         collectionContainer.appendChild(collectionDiv);
 
     }
     addBtn.innerHTML = "Added!";
 
-    console.log(collection);
-});
+}
 
 
 
@@ -587,7 +740,7 @@ function clearBookInfo() {
 
 function showCommentBox() {
     let containerDiv = document.getElementById('portalContainer');
-    containerDiv.style.display = 'grid';
+    containerDiv.style.display = 'block';
 }
 
 function clearCommentBox() {

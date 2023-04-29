@@ -79,7 +79,7 @@
         "isbn": "9780857424426",
         "thoughts": "My first Espedal's. He wrote about how he wrote, mixing fictions with his first perspective. I can feel the afternoon sun shining into a hotel room in southern Italy reading this.",
         "location": "Trondheim",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1475305012i/31939429.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549033017i/43805347.jpg"
     },
     {
         "title": "A Brief History of Time",
@@ -185,7 +185,7 @@
         "translatedTitle": "Asleep",
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "9789571331744",
-        "x": 3,
+        "x": 1,
         "y": 6,
         "location": "Taipei",
         "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421915793i/24636390.jpg"
@@ -309,7 +309,7 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "9789571348476",
         "x": 2,
-        "y": -2,
+        "y": -4,
         "thoughts": "She saw the world for the first time not as an amateur.",
         "location": "Taipei",
         "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421909933i/24634642.jpg"
@@ -574,7 +574,7 @@
         "author": "Haruki Murakami",
         "isbn": "0",
         "x": -2,
-        "y": 10
+        "y": 12
     },
     {
         "title": "An Apprenticeship or The Book of Pleasures",
@@ -650,7 +650,7 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 2,
-        "y": -4
+        "y": -8
     },
     {
         "title": "王國4：另一個世界",
@@ -658,7 +658,7 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 2,
-        "y": -6
+        "y": -12
     },
     {
         "title": "聽風的歌",
@@ -807,7 +807,7 @@
     {
         "title": "想法誕生前最重要的事",
         "translatedTitle": "N/A",
-        "author": "Chie Morimoto",
+        "author": "森本千絵 Chie Morimoto",
         "isbn": "9789862356586"
     },
     {

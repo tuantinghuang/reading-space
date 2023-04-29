@@ -1,3 +1,5 @@
+
+
 /* what interface do i need?
 welcome instruction
 btn for world map
@@ -72,4 +74,36 @@ if (window.location.pathname.endsWith('book.html')) {
         console.log(data);
 
     });
+
+
+
+
 }
+
+if (document.getElementById('downloadBtn')) {
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        console.log('download clicked!');
+
+    });
+}
+
+function printpdf() {
+
+    // pdfMake.fonts = {
+    //     NotoSansTC: {
+    //         normal: ['https://fonts.googleapis.com/css?family=Noto+Sans+TC', 'NotoSansTC-Regular']
+    //     }
+    // };
+
+    var docDefinition = {
+        content: ['hello', '中文測試'],
+        // defaultStyle: {
+        //     font: 'NotoSansTC'
+        // }
+    }
+    pdfMake.createPdf(docDefinition).download();
+}
+
+
+
+

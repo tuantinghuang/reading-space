@@ -6,18 +6,21 @@ export class Portal {
 
         let hue = Math.floor(this.getRandomArbitrary(0, 360));
         let c = 'hsl(';
-        let color = c.concat(hue).concat(', 100%, 50%)');
+        let color = c.concat(hue).concat(', 100%, 20%)');
         let matColor = new THREE.Color(color);
 
-        this.geo = new THREE.TorusGeometry(0.5, 0.5, 16, 32);
+        this.geo = new THREE.PlaneGeometry(1.5, 1.5);
+
         let mat = new THREE.MeshStandardMaterial({
             emissive: matColor,
-            emissiveIntensity: 0.1
+            emissiveIntensity: 0.01,
+            side: THREE.DoubleSide
+            //wireframe: true,
         });
         this.mesh = new THREE.Mesh(this.geo, mat);
-        this.mesh.position.set(x, y - 0.9, z);
+        this.mesh.position.set(x, y + 0.01, z - 0.7);
         this.mesh.rotateX(Math.PI / 2);
-        group.add(this.mesh);
+        //group.add(this.mesh);
 
         //calculate the position without the book group's translate
 

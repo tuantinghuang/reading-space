@@ -52,6 +52,15 @@ button:hover{
     background:rgba(0, 0, 0, 0.15);
 } 
 
+input{
+    border:1px solid black;
+    color:black;
+    border-radius:20px;
+    padding-top:5px;
+    padding-bottom: 5px;
+
+}
+
 #background{
     position:fixed;
     top:0px;
@@ -92,7 +101,6 @@ button:hover{
 
 #intro{
     width:60vw;
-    height:100vh;
     margin:0;
     padding:0;
     position:fixed;
@@ -107,16 +115,15 @@ button:hover{
     display:none;
     position:fixed;
     width:100vw;
-    height:100vh;
     margin:0;
     padding:0;
-    background-color: rgba(255, 255, 255, 0.5);
     font-size:2rem;
 }
 
 #instruction, #quote>p{
     width:60vw;
 }
+
 
 
 
@@ -128,23 +135,24 @@ button:hover{
     height:23vh;
     margin:0px;
     padding:10px;
-    left:0px;
+    right:0px;
     bottom:0px;
 
     background: rgb(255,255,255);
 background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%);
 
     display:none;
-    grid-template-columns: 3fr 4fr 5fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr 4fr;
     grid-template-areas:
         "col1 col2 col3 col4";
  
 }
 
+
 #portalContainer{
     position:fixed;
-    width:100vw;
-    height:10vh;
+    width:20vw;
+    height:20vh;
     margin:0px;
     padding:10px;
     left:0px;
@@ -154,9 +162,9 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 
 background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%);
 
     display:none;
-    grid-template-columns: 3fr 4fr 5fr 1fr;
+    /* grid-template-columns: 3fr 4fr 5fr 1fr;
     grid-template-areas:
-        "col1 col2 col3 col4";
+        "col1 col2 col3 col4"; */
 }
 
 .col1, .col2,.col3,.col4{
@@ -202,8 +210,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 
 
 #collectionContainer>div{
     
-    
-    color:white;
+    z-index: 10;
     padding-left:10px;
     margin:5px;
 
@@ -212,7 +219,17 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 
 #collectionContainer{
     display:none;
     position:fixed;
-    bottom:100px;
+    right:50px;
+    top:10px;
+    width:200px;
+}
+
+.deleteCollectionBtn{
+    display: none;
+}
+
+.collectionBookTitle:hover+.deleteCollectionBtn{
+    display:inline;
 }
 
 
@@ -225,5 +242,6 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 
 
 #downloadBtn{
     position:fixed;
-    bottom:50px;
+    top:10px;
+    right:5px;
 }

@@ -12,13 +12,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
   </head>
   <body>
     <div id="infoContainer">
-      <div class="col1">
+      <div class="col1"></div>
+      <div class="col2">
         <img id="cover" src="" />
       </div>
-      <div class="col2">
+      <div class="col3">
         <div class="upper">
           <h4 id="title"></h4>
           <div id="originalTitle"></div>
@@ -29,34 +32,33 @@
           <div id="isbn"></div>
         </div>
       </div>
-      <div class="col3">
+      <div class="col4">
         <div id="thoughts"></div>
         <button class="bottom" id="addCollectionBtn">
           + Add to collection
         </button>
       </div>
-      <div class="col4"></div>
     </div>
 
     <div id="collectionContainer">
       <div>YOUR BASKET:</div>
-      <button id="downloadBtn">download</button>
+      <button id="downloadBtn" onclick="printpdf()">download</button>
     </div>
     <button id="worldmapbtn">world map</button>
 
     <div id="portalContainer">
-      <div class="col1">Whisper your thoughts...?</div>
-      <div class="col2">
-        <label>Comments:</label>
-        <input id="comment" type="text" />
-      </div>
-      <div class="col3">
-        <label>Name:</label>
-        <input id="commenter" type="text" />
-      </div>
-      <div class="col4">
-        <button id="submitCommentBtn">submit</button>
-      </div>
+      <!-- <form action="/post" method="post" name="commentForm"> -->
+      <form>
+        <input type="hidden" name="id" value="1" />
+        whisper:
+        <input type="text" name="comments" />
+        <br />
+
+        leave a trace:
+        <input type="text" name="name" />
+        <br />
+        <input type="submit" value="enter" id="submitCommentBtn" />
+      </form>
     </div>
 
     <script type="importmap">
