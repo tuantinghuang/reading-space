@@ -3,17 +3,13 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
 export class Book {
-    constructor(x, y, z, group, model) {
+    constructor(x, y, z, group, model, palette) {
 
-
-
-        let hue = Math.floor(this.getRandomArbitrary(0, 360));
-        let c = 'hsl(';
-        let color = c.concat(hue).concat(', 100%, 90%)');
-        let matColor = new THREE.Color(color);
+        let matColor = new THREE.Color(palette);
 
         this.bookMat = new THREE.MeshLambertMaterial({
             color: matColor,
+            reflectivity: 0
         });
 
         this.book = new THREE.Mesh(model.geometry, this.bookMat);
@@ -29,10 +25,12 @@ export class Book {
 
         this.box = new THREE.Box3();
         this.box.copy(this.book.geometry.boundingBox).applyMatrix4(this.book.matrixWorld);
-        this.book.geometry.attributes.position.needsUpdate = true;
-        let helper = new THREE.Box3Helper(this.box);
-        //group.add(helper);
+        //this.box.expandByVector(new THREE.Vector3(1.5, 1, 1.5));
 
+        this.book.geometry.attributes.position.needsUpdate = true;
+
+        let helper = new THREE.Box3Helper(this.box);
+        group.add(helper);
 
     }
 

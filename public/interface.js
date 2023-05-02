@@ -6,6 +6,7 @@ btn for world map
 
  */
 
+
 //index page
 if (document.getElementById('enterIntroBtn')) {
 
@@ -76,33 +77,56 @@ if (window.location.pathname.endsWith('book.html')) {
     });
 
 
-
-
 }
+
+
 
 if (document.getElementById('downloadBtn')) {
     document.getElementById('downloadBtn').addEventListener('click', function () {
         console.log('download clicked!');
-
+        printpdf();
     });
 }
 
-function printpdf() {
 
-    // pdfMake.fonts = {
-    //     NotoSansTC: {
-    //         normal: ['https://fonts.googleapis.com/css?family=Noto+Sans+TC', 'NotoSansTC-Regular']
-    //     }
-    // };
+function printpdf() {
+    let titles = document.getElementsByClassName("collectionBookTitle");
+    let content = [];
+
+    for (let i = 0; i < titles.length; i++) {
+        content[i] = titles[i].innerText;
+    }
+
+    console.log(content)
+
+    pdfMake.fonts = {
+        Roboto: {
+            normal: 'Roboto-Regular.ttf',
+            bold: 'Roboto-Medium.ttf',
+            italics: 'Roboto-Italic.ttf',
+            bolditalics: 'Roboto-MediumItalic.ttf',
+        },
+        ArialUnicode: {
+            normal: 'arial-unicode-ms.ttf',
+            bold: 'arial-unicode-ms.ttf',
+            italics: 'arial-unicode-ms.ttf',
+            bolditalics: 'arial-unicode-ms.ttf'
+        }
+    };
 
     var docDefinition = {
-        content: ['hello', '中文測試'],
-        // defaultStyle: {
-        //     font: 'NotoSansTC'
-        // }
+        content: content,
+        defaultStyle: {
+            font: 'ArialUnicode'
+        }
+
     }
     pdfMake.createPdf(docDefinition).download();
 }
+
+
+
+
 
 
 

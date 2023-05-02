@@ -3,28 +3,81 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
-import { Book } from './book.js'
-import { Portal } from './portal.js'
+import { Book } from './book.js';
+import { Portal } from './portal.js';
 
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { AfterimagePass } from 'three/addons/postprocessing/AfterimagePass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+const params = {
+    exposure: 0,
+    bloomStrength: 0.2,
+    bloomThreshold: 0.95,
+    bloomRadius: 0.1
+};
+let bloomPass, composer;
+
+const palette = [
+    0xffccf9,//pink
+    0xCCFFF7,//tiffany teal
+    0xccd5fe,//light purple
+    0xcdffdb,//light green
+    0xD6D6D6, //yellow
+    0xFFE3CC//light blue
+]
+
+const palette_rgb = [
+    'rgb(255,204,249)',
+    'rgb(204,255,247)',
+    'rgb(204,213,254)',
+    'rgb(205,255,219)',
+    'rgb(214,214,214)',
+    'rgb(255,227,204)'
+]
+
+//location parameters
+let bookSectionParams = [
+    [20, 0, 60, 50],//1 (x,y) to(x,y)
+    [0, 0, 20, 40],
+    [40, 50, 60, 98],
+    [0, 50, 40, 70],
+    [0, 70, 40, 98],
+    [20, 35, 40, 55]
+]
+
+let bookSectionLabels = [
+    ["They lent me lens with a soft cover of sorrow that clarifies"],
+    ["A bit exciting, a bit thrilling"],
+    ["Calming descriptions nurtured by (personal) time and history"],
+    ["How could art be so blessed and cursed by text?"],
+    ["The membranes between every day"],
+    ["My book guardians"]
+]
 
 let scene, renderer, camera, controls;
 let controller, controllerBox;
 let controllerOldPosition = new THREE.Vector3();
 let books = [];
 let portals = [];
-let bookGroup, gateModel, portalGroup;
+let bookGroup, gateModel, portalGroup, sectionGroup;
 let particleGroup;
 let font;
 
 //welcome page elements
-let welcomeScene, activeScene;
+let zoomOutScene, activeScene;
 let welcomeGroup, bigBookGroup, bookModel;
 
 //world map elements
 let topCamera, activeCamera;
-let raycaster, pointer, INTERSECTED;
+let raycaster, pointer, event, INTERSECTED;
+let sectionPlanes = [];
+let sectionLines = [];
+
 
 let socket;
+
 
 
 
@@ -33,13 +86,14 @@ function init() {
     scene = new THREE.Scene();
 
     scene.background = new THREE.Color(0xdddddd);
-    welcomeScene = new THREE.Scene();
-    //welcomeScene.background = new THREE.Color(0xEEF3F5);
+    zoomOutScene = new THREE.Scene();
+
+    zoomOutScene.background = new THREE.Color(0xffffff);
 
     if (window.location.pathname.endsWith('book.html')) {
         activeScene = scene;
     } else {
-        activeScene = welcomeScene;
+        activeScene = zoomOutScene;
     }
 
 
@@ -78,7 +132,9 @@ function init() {
     createBoard();
     createController();
     createBooks();
+    createSectionPlanes();
     createPortals();
+
 
 
     //light
@@ -101,6 +157,21 @@ function init() {
 
     // const helper = new THREE.CameraHelper(dir_light.shadow.camera);
     // scene.add(helper);
+
+    //post processing
+    composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(activeScene, camera);
+    composer.addPass(renderPass);
+
+    const afterimagePass = new AfterimagePass();
+    afterimagePass.uniforms['damp'] = { value: 0.7 }
+    composer.addPass(afterimagePass);
+
+    bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+    bloomPass.threshold = params.bloomThreshold;
+    bloomPass.strength = params.bloomStrength;
+    bloomPass.radius = params.bloomRadius;
+    composer.addPass(bloomPass);
 
 }
 
@@ -129,7 +200,7 @@ function callModel() {
 function initWelcomePageComponents() {
     //light
     let light = new THREE.AmbientLight(0xffffff, 1);
-    welcomeScene.add(light);
+    zoomOutScene.add(light);
 
     let dir_light = new THREE.DirectionalLight(0xffffff, 0.1);
     dir_light.position.set(10, 100, 100);
@@ -139,13 +210,13 @@ function initWelcomePageComponents() {
     dir_light.shadow.camera.bottom = -50;
     dir_light.shadow.camera.left = -30;
     dir_light.shadow.camera.far = 200;
-    welcomeScene.add(dir_light);
+    zoomOutScene.add(dir_light);
 
 
 
     welcomeGroup = new THREE.Group();
     bigBookGroup = new THREE.Group();
-    welcomeScene.add(welcomeGroup);
+    zoomOutScene.add(welcomeGroup);
     welcomeGroup.add(bigBookGroup);
 
 }
@@ -211,7 +282,7 @@ function createParticles() {
 //welcome page's big book
 function createBigBook() {
     bookModel.scale.set(10, 10, 10);
-    bookModel.position.set(1.5, -8.45, 0);
+    bookModel.position.set(1.5, -8.45, -1);
     bookModel.traverse(function (child) {
 
         if (child.isMesh) {
@@ -234,28 +305,32 @@ function initWorldmapComponents() {
     raycaster = new THREE.Raycaster();
     pointer = new THREE.Vector2();
 
-
 }
 
 window.addEventListener('pointermove', onPointerMove);
 
 
-function onPointerMove(event) {
+function onPointerMove(e) {
 
     // calculate pointer position in normalized device coordinates
     // (-1 to +1) for both components
 
-    pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-    pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = - (e.clientY / window.innerHeight) * 2 + 1;
 
+    let div = document.getElementById("sectionLabel");
+    div.style.left = e.clientX + 10 + 'px';
+    div.style.top = e.clientY + 10 + 'px';
 }
 
+let hoveredIndex = undefined;
+let showingLabel = false;
 
 function renderRaycaster() {
 
     raycaster.setFromCamera(pointer, topCamera);
 
-    let intersects = raycaster.intersectObjects(bigBookGroup.children, true);
+    let intersects = raycaster.intersectObjects(sectionGroup.children, true);
 
     if (intersects.length > 0) {
 
@@ -265,20 +340,37 @@ function renderRaycaster() {
             if (INTERSECTED) {
                 if (INTERSECTED.material.color) {
                     INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+                    INTERSECTED.material.opacity = 0;
+                    //zoomOutScene.remove(sectionPlanes[hoveredIndex]);
+                    zoomOutScene.remove(sectionLines[hoveredIndex]);
+
+                    clearLabel();
+                    showingLabel = false;
+
                 }
 
             }
             //update intersected object
             INTERSECTED = intersects[0].object;
+            hoveredIndex = INTERSECTED.userData.index;
 
 
             if (INTERSECTED.material.color) {
 
                 //save the intersected object current color
                 INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+                INTERSECTED.material.opacity = 0.5;
+
 
                 //then change the color
-                INTERSECTED.material.color.setHex(0xffffff);
+                let colorHex = palette[hoveredIndex];
+
+                INTERSECTED.material.color.setHex(colorHex);
+                showLabel(bookSectionLabels[hoveredIndex]);
+
+
+                //zoomOutScene.add(sectionPlanes[hoveredIndex]);
+                zoomOutScene.add(sectionLines[hoveredIndex])
             }
             console.log(INTERSECTED);
 
@@ -290,14 +382,66 @@ function renderRaycaster() {
             if (INTERSECTED.material.color) {
                 //reset the objects color to its original
                 INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+                INTERSECTED.material.opacity = 0;
+                //zoomOutScene.remove(sectionPlanes[hoveredIndex]);
+                zoomOutScene.remove(sectionLines[hoveredIndex]);
+                clearLabel();
+                hoveredIndex = undefined;
             }
         }
         //reset the intersected
         INTERSECTED = null;
 
+
     }
 
 }
+
+window.addEventListener('mousedown', checkShowingLabel);
+// let bookSectionParams = [
+//     [20, 0, 60, 50],//1 (x,y) to(x,y)
+//     [0, 0, 20, 40],
+//     [40, 50, 60, 98],
+//     [0, 50, 40, 70],
+//     [0, 70, 40, 98],
+//     [20, 35, 40, 55]
+// ]
+function checkShowingLabel() {
+    console.log('mouse clicked')
+    if (hoveredIndex) {
+        console.log(hoveredIndex);
+        activeCamera = camera;
+        activeScene = scene;
+
+        let minX = bookSectionParams[hoveredIndex][0];
+        let minY = bookSectionParams[hoveredIndex][1];
+        let maxX = bookSectionParams[hoveredIndex][2];
+        let maxY = bookSectionParams[hoveredIndex][3];
+        let x = (minX + maxX) / 2;
+        let y = (minY + maxY) / 2;
+
+        controller.position.x = x - 30;
+        controller.position.z = y - 50;
+
+        clearLabel();
+        showingLabel = false;
+        zoomOutScene.remove(sectionLines[hoveredIndex]);
+    }
+}
+
+function showLabel(name) {
+    let div = document.getElementById("sectionLabel");
+    div.textContent = name;
+
+}
+
+function clearLabel(name) {
+    let div = document.getElementById("sectionLabel");
+    div.textContent = "";
+    div.style.color = 'black'
+}
+
+
 
 
 
@@ -317,7 +461,7 @@ function createBoard() {
         bumpScale: 10,
     })]);
     board.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
-    board.position.set(0, -0.7, 0);
+    board.position.set(0, -0.7, -1);
     board.receiveShadow = true;
     board.castShadow = false;
     scene.add(board);
@@ -331,7 +475,7 @@ function createBoard() {
         bumpScale: 0.1,
     })]);
     wBoard.geometry.groups = [{ start: 0, count: 30, materialIndex: 0 }, { start: 12, count: 14, materialIndex: 1 }];
-    wBoard.position.set(0, -0.7, 0);
+    wBoard.position.set(0, -0.7, -1);
     wBoard.receiveShadow = true;
     welcomeGroup.add(wBoard);
 }
@@ -344,14 +488,89 @@ function createController() {
     controller.geometry.computeBoundingBox();
     controllerBox = new THREE.Box3();
 
+
+
     let helper = new THREE.Box3Helper(controllerBox);
-    //scene.add(helper);
+    scene.add(helper);
 }
 
 
 function createBooks() {
     bookGroup = new THREE.Group();
     scene.add(bookGroup);
+}
+
+
+
+function createSectionPlanes() {
+    sectionGroup = new THREE.Group();
+    zoomOutScene.add(sectionGroup);
+
+    for (let i = 0; i < bookSectionParams.length; i++) {
+        let minX = bookSectionParams[i][0];
+        let minY = bookSectionParams[i][1];
+        let maxX = bookSectionParams[i][2];
+        let maxY = bookSectionParams[i][3];
+        let w = maxX - minX;
+        let h = maxY - minY;
+        let geo = new THREE.PlaneGeometry(1, 1);
+        geo.translate(0.5, -0.5, 0);
+
+        let mat = new THREE.MeshStandardMaterial({
+            color: palette[i],
+            transparent: true,
+            opacity: 0,
+        });
+
+        //create a plane holder for raycaster detection
+        let planeHolder = new THREE.Mesh(geo, mat);
+        planeHolder.scale.set(w - 2, h - 2);
+
+        planeHolder.rotateX(-Math.PI / 2)
+        // //x-28, y-50
+        planeHolder.position.set(minX + 1 - 30, 2, minY + 1 - 50);
+        planeHolder.userData.index = i;
+
+        sectionGroup.add(planeHolder);
+
+        // let cv = document.createElement("canvas");
+        // cv.width = w * 10;
+        // cv.height = h * 10;
+        // let ctx = cv.getContext('2d');
+        // ctx.fillText(bookSectionLabels[i], w / 2, h / 2);
+        // ctx.font = 'bold 20px Helvetica';
+
+        // let cvTexture = new THREE.Texture(cv);
+        // cvTexture.needsUpdate = true;
+
+        //this plane and line is to be displayed when raycaster detected hover
+        let points = [];
+        points.push(new THREE.Vector3(minX, 0, minY));
+        points.push(new THREE.Vector3(minX, 0, maxY - 2));
+        points.push(new THREE.Vector3(maxX - 2, 0, maxY - 2));
+        points.push(new THREE.Vector3(maxX - 2, 0, minY));
+        points.push(new THREE.Vector3(minX, 0, minY));
+        let lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+        let line = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({
+            color: palette[i],
+            linewidth: 1
+        }));
+        line.position.set(1 - 30, 2, 1 - 50);
+        sectionLines.push(line);
+
+
+
+        // let plane = planeHolder.clone();
+        // plane.material.dispose();
+        // plane.material = new THREE.MeshStandardMaterial({
+        //     map: cvTexture,
+        //     transparent: true
+        // })
+
+        // sectionPlanes.push(plane);
+
+    }
+
 }
 
 
@@ -372,36 +591,46 @@ async function getData(model) {
     const response = await fetch(request);
     let data = await response.json();
 
+
+
+
     if (data.length > 0) {
+
 
         for (let i = 0; i < data.length; i++) {
             let x, z;
 
-            if (data[i].x) {
-                x = data[i].x;
-                z = data[i].y;
+            //tag is 1-6, index is 0-5
+            let index = data[i].tag - 1;
 
-            } else {
-                //translate to center baord size
-                x = Math.floor(getRandomArbitrary(-28, 28));
-                if (x % 2 == 1) x++;
+            let minX = bookSectionParams[index][0] - 28;
+            let minY = bookSectionParams[index][1] - 50;
+            let maxX = bookSectionParams[index][2] - 32;
+            let maxY = bookSectionParams[index][3] - 50;
 
-                z = Math.floor(getRandomArbitrary(-50, 50));
-                if (z % 2 == 1) z++;
-
+            x = Math.floor(getRandomArbitrary(minX, maxX));
+            if ((x % 2 == 1) || (x % 2 == -1)) {
+                x++;
             }
 
-            let b = new Book(x, 0.2, z, bookGroup, model);
+            z = Math.floor(getRandomArbitrary(minY, maxY));
+            if ((z % 2 == 1) || (z % 2 == -1)) z++;
+
+            console.log(x + ', ' + z);
+
+            let b = new Book(x, 0.2, z - 0.2, bookGroup, model, palette[index]);
             b.book.userData = data[i];
             books.push(b);
 
-            let b_clone = new Book(x, 0.2, z, bigBookGroup, model);
+
+            let b_clone = new Book(x, 0.2, z - 0.2, bigBookGroup, model, palette[index]);
             b_clone.book.userData = data[i];
         }
 
     }
 
 }
+
 
 
 
@@ -444,6 +673,10 @@ function moveController(e) {
             break;
     }
 }
+
+function checkBoardEdge() {
+
+}
 let bookID = undefined;
 let portalID = undefined;
 
@@ -453,6 +686,7 @@ function checkKeyPressed(e) {
     }
 }
 let prevKey = '';
+let collectBook = false;
 function checkCollision(e) {
     let okToMove = 1;
 
@@ -463,6 +697,7 @@ function checkCollision(e) {
 
     //then move the controller based on keypress
     moveController(e);
+    checkBoardEdge();
 
     //update controller's position
     controller.updateMatrixWorld();
@@ -473,6 +708,7 @@ function checkCollision(e) {
     for (let i = 0; i < books.length; i++) {
 
         books[i].box.copy(books[i].book.geometry.boundingBox).applyMatrix4(books[i].book.matrixWorld);
+        books[i].box.expandByVector(new THREE.Vector3(0.5, 0, 0.5));
 
         if (controllerBox.intersectsBox(books[i].box)) {
             okToMove *= -1;
@@ -508,30 +744,35 @@ function checkCollision(e) {
                 // books[bookID].showTitle(JSON.stringify(title));
                 showBookInfo(bookID);
 
+                moveController(e);
                 //show the hint if they past the door, they collect the book
 
+                //1st time: true to false
+                collectBook = !collectBook;
 
-                //if the keycode is the same as the prev key (still up or down), let it move
-                if (e.keyCode == prevKey) {
-
-                    if (prevKey == "38") {
-                        //move controller
-                        moveController(e);
-                        //collect book
-                        addtoCollection();
-
-                    } else {
-                        moveController(e);
-
-                        //collect book
-                        addtoCollection();
-                    }
-                    prevKey = "";
-
+                if (collectBook) {
+                    addtoCollection();
                 }
+                console.log(collectBook)
 
-                //save this keycode
-                prevKey = e.keyCode;
+                // //if the keycode is the same as the prev key (still up or down), let it move
+                // if (e.keyCode == prevKey) {
+
+                //     moveController(e);
+                //     //collect book
+                //     addtoCollection();
+                //     prevKey = '';
+
+
+                // } else {
+                //     moveController(e);
+                //     //save this keycode
+                //     prevKey = e.keyCode;
+
+                // }
+                // console.log(prevKey);
+
+
 
             }
 
@@ -560,7 +801,7 @@ function checkCollision(e) {
 
 }
 
-
+let cameraOffsetOn = true;
 
 function render() {
 
@@ -568,10 +809,13 @@ function render() {
 
 
     if (activeScene == scene) {
+
         const cameraOffset = new THREE.Vector3(0, 3, 8); // NOTE Constant offset between the camera and the target
         camera.position.copy(controller.position).add(cameraOffset);
-        camera.lookAt(controller.position)
+
+        camera.lookAt(controller.position);
         camera.updateProjectionMatrix();
+
     }
 
     if (activeCamera == topCamera) {
@@ -580,6 +824,10 @@ function render() {
     } else {
         welcomeGroup.rotateY(0.001);
     }
+
+    let maxEdge = new THREE.Vector3(30, 2, 50);
+    let minEdge = new THREE.Vector3(-30, -2, -50);
+    controller.position.clamp(minEdge, maxEdge);
 
     //move particle systems
 
@@ -590,13 +838,18 @@ function render() {
         if (object instanceof THREE.Points) {
 
             // object.rotation.x = time * (i < 4 ? i + 1 : - (i + 1)) ;
-            object.position.y += Math.sin(time * 10) * 0.1;
+            object.position.y += Math.sin(time * 10 + i) * 0.1;
+            object.material.size += Math.sin(time + i) * 0.001;
 
         }
 
     }
+    if (activeCamera === camera) {
+        composer.render();
+    } else {
+        renderer.render(activeScene, activeCamera);
+    }
 
-    renderer.render(activeScene, activeCamera);
     //renderer.render(scene, camera);
     requestAnimationFrame(render);
 
@@ -618,10 +871,10 @@ function getRandomArbitrary(min, max) {
 
 */
 
-if (document.getElementById('worldmapbtn')) {
-    document.getElementById('worldmapbtn').addEventListener('click', function () {
+if (document.getElementById('worldmapBtn')) {
+    document.getElementById('worldmapBtn').addEventListener('click', function () {
         activeCamera = topCamera;
-        activeScene = welcomeScene;
+        activeScene = zoomOutScene;
     });
 }
 
@@ -702,7 +955,7 @@ function addtoCollection() {
 
         //switch the collection container's display just once  
         if (collection.length < 1) {
-            //collectionContainer.style.display = "block";
+            collectionContainer.style.display = "block";
         }
 
         collection.push(title);

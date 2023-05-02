@@ -5,7 +5,9 @@
         "isbn": "9781846276958",
         "thoughts": "An ode that feels like moonlight, with a texture like grains of snow. Precious and temporary.",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/10227226-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/10227226-L.jpg",
+        "tag": 1,
+        "undefined": "1- They lent me lens with a soft cover of sorrow that clarifies \n2 - A bit exciting, a bit thrilling\n3 - Calming descriptions nurtured by (personal) time and history\n4 - How could art be so blessed and cursed by text?\n5 - The membranes between every day\n6 - My book guardians"
     },
     {
         "title": "Men Without Women",
@@ -14,7 +16,8 @@
         "isbn": "9780385689465",
         "thoughts": "Full of male perspectives but somehow these perspectives saddened me. ",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/13768905-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/13768905-L.jpg",
+        "tag": 1
     },
     {
         "title": "In Praise of the Stepmother",
@@ -22,7 +25,8 @@
         "isbn": "0571141358",
         "thoughts": "Sensual and vivid, ironic and hilarious. Describing bodily phemonena so intentionally, does it elevate the experience?",
         "location": "Trondheim",
-        "img": "https://ia800309.us.archive.org/view_archive.php?archive=/10/items/olcovers651/olcovers651-L.zip&file=6517430-L.jpg"
+        "img": "https://ia800309.us.archive.org/view_archive.php?archive=/10/items/olcovers651/olcovers651-L.zip&file=6517430-L.jpg",
+        "tag": 2
     },
     {
         "title": "The Bell Jar",
@@ -30,7 +34,8 @@
         "isbn": "9780571226160",
         "thoughts": "Intense, fictional and dramatic, but reflected so many aspects of one of the paths in real life.",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/379045-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/379045-L.jpg",
+        "tag": 2
     },
     {
         "title": "Against Interpretation",
@@ -39,7 +44,8 @@
         "isbn": "9780312280864",
         "thoughts": "My first and favorite Sontag book. Recommended by someone very dear to me. This book opens my world to fine arts and how I regard them, as well as my relationship with this angel person.",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/178097-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/178097-L.jpg",
+        "tag": 6
     },
     {
         "title": "As Consciousness is Harnessed to Flesh",
@@ -47,7 +53,8 @@
         "isbn": "9780374100766",
         "thoughts": "I read this after my friend passed away. It was painfully close to my experience then. I can feel pain and resistence in her words. Admirable persistence.",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/11348796-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/11348796-L.jpg",
+        "tag": 3
     },
     {
         "title": "Weight of the Earth: The Tape Journals of David Wojnarowicz",
@@ -55,7 +62,8 @@
         "isbn": "9781635900170",
         "thoughts": "This book is transcribed from his audio tape recorder. Somehow talking feels more genuine than writing. No time to think, to cross out what you said, it comes out as is.",
         "location": "Berlin",
-        "img": "https://covers.openlibrary.org/b/id/11348964-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/11348964-L.jpg",
+        "tag": 1
     },
     {
         "title": "Valerie: or, The Faculty of Dreams",
@@ -63,7 +71,8 @@
         "isbn": "9780374151911",
         "thoughts": "Friend's recommendation. Did not like it, because I couldn't get myself to buy in the drama and insanity of the main character. The insanity felt like pure suffer.",
         "location": "Trondheim",
-        "img": "https://covers.openlibrary.org/b/id/10184678-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/10184678-L.jpg",
+        "tag": 2
     },
     {
         "title": "比霧更深的地方",
@@ -71,7 +80,8 @@
         "isbn": "9789863596349",
         "thoughts": "Soft essays on art and life. It was my first Chinese book in 8 months after living in Norway. It felt soft, just like Taiwan, just like Madarin.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549033017i/43805347.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549033017i/43805347.jpg",
+        "tag": 3
     },
     {
         "title": "Bergeners",
@@ -79,7 +89,8 @@
         "isbn": "9780857424426",
         "thoughts": "My first Espedal's. He wrote about how he wrote, mixing fictions with his first perspective. I can feel the afternoon sun shining into a hotel room in southern Italy reading this.",
         "location": "Trondheim",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549033017i/43805347.jpg"
+        "img": "",
+        "tag": 1
     },
     {
         "title": "A Brief History of Time",
@@ -87,7 +98,8 @@
         "author": "Stephen Hawking",
         "isbn": "9780857501004",
         "thoughts": "So fascinating, yet each chapter took me two hours to truly comprehend. When thinking of time this way, life opens up like a sweeping meander.",
-        "location": "Trondheim"
+        "location": "Trondheim",
+        "tag": 3
     },
     {
         "title": "Talking to Women",
@@ -95,7 +107,8 @@
         "isbn": "9780995716216",
         "thoughts": "Reading women's words from different era makes me feel unease. The collective belief seemed out of balance, yet with another sense of simplicity that we have lost.",
         "location": "Trondheim",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1527667763i/40239437.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1527667763i/40239437.jpg",
+        "tag": 5
     },
     {
         "title": "挪威的森林（上）",
@@ -106,7 +119,8 @@
         "y": 2,
         "thoughts": "My entry to Japanese literature. I remember love reading as a kid, but I almost paused entirely during my teenage years. This book brought me back to reading, and introduced sorrow to young Tuan. ",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1336124856i/13633432.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1336124856i/13633432.jpg",
+        "tag": 6
     },
     {
         "title": "挪威的森林（下）",
@@ -117,7 +131,8 @@
         "y": 4,
         "thoughts": "I've never seen a book series divided in such an elegant and smooth way. The first and second half felt like mirrors to themselves, as I was transforming with the main character.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309452173i/11890307.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309452173i/11890307.jpg",
+        "tag": 6
     },
     {
         "title": "直到長出青苔",
@@ -128,7 +143,8 @@
         "y": 8,
         "thoughts": "Thick and solid. A calm, personal voice brushing through human's existence, history, and time. Like Sugimoto's photography, this book is direct yet with tenderness.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407596062i/22888124.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1407596062i/22888124.jpg",
+        "tag": 3
     },
     {
         "title": "陰翳禮讚",
@@ -139,7 +155,8 @@
         "y": 10,
         "thoughts": "Subtlety of darkness, and how darkness introduce softness and perspectives to our daily life. Especially loved the bathroom chapter.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1443504717i/26833560.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1443504717i/26833560.jpg",
+        "tag": 3
     },
     {
         "title": "戀人絮語",
@@ -148,7 +165,8 @@
         "isbn": "9862720077",
         "thoughts": "A book full of subtle butterflies.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489425907i/11149990.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489425907i/11149990.jpg",
+        "tag": 2
     },
     {
         "title": "液態之愛：論人際紐帶的脆弱",
@@ -157,7 +175,8 @@
         "isbn": "9789861249773",
         "thoughts": "A reflection of how modern people are stuck in their own traps, in the meantime enjoyed being trapped together yet lonelily.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1502535434i/36006291.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1502535434i/36006291.jpg",
+        "tag": 5
     },
     {
         "title": "金閣寺",
@@ -168,7 +187,8 @@
         "y": 12,
         "thoughts": "Intense, just as Yukio's portrait taken by Eikoh Hosoe. He is very consistent in this sense, disciplined, strong in belief, with a touch of fantasy.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1190736068i/1948057.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1190736068i/1948057.jpg",
+        "tag": 2
     },
     {
         "title": "The Unbearable Lightness of Being",
@@ -178,7 +198,8 @@
         "x": 6,
         "y": 18,
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1544400889i/43185683.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1544400889i/43185683.jpg",
+        "tag": 2
     },
     {
         "title": "白河夜船",
@@ -188,7 +209,8 @@
         "x": 1,
         "y": 6,
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421915793i/24636390.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421915793i/24636390.jpg",
+        "tag": 1
     },
     {
         "title": "斜陽",
@@ -199,7 +221,8 @@
         "y": 10,
         "thoughts": "A slow grievance over a long period of time. Compared to Dazai's No Longer Human, this book is significantly softer with the same depth of bearing.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1597679062i/54996132.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1597679062i/54996132.jpg",
+        "tag": 1
     },
     {
         "title": "思考的蘆葦",
@@ -209,13 +232,15 @@
         "y": 10,
         "thoughts": "A collection of essays on Dazai's inner thoughts, regarding his own existence as a human being. What is confidence, where does it come from? Who is considered as a success and who a failure? Thoughts that position our stances in the world. It depicted clear context and personality to me after reading several of his novels.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1606469130i/56058907.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1606469130i/56058907.jpg",
+        "tag": 3
     },
     {
         "title": "人類動物園",
         "author": "Desmond Morris",
         "isbn": "0",
-        "location": "Taipei"
+        "location": "Taipei",
+        "tag": 5
     },
     {
         "title": "幸福建築",
@@ -224,14 +249,16 @@
         "isbn": "9789861340814",
         "thoughts": "How does a building, a street speaks to us, to our surroundings?",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439517538i/26096192.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439517538i/26096192.jpg",
+        "tag": 5
     },
     {
         "title": "真原醫",
         "author": "楊定一",
         "isbn": "9789866759703",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462268072i/16034773.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462268072i/16034773.jpg",
+        "tag": 3
     },
     {
         "title": "土星座下",
@@ -239,21 +266,24 @@
         "author": "Susan Sontag",
         "isbn": "9789861738338",
         "location": "Trondheim",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1360512595i/17345727.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1360512595i/17345727.jpg",
+        "tag": 4
     },
     {
         "title": "脆弱的力量",
         "author": "Brene Brown",
         "isbn": "9789866319877",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1469003004i/20980609.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1469003004i/20980609.jpg",
+        "tag": 5
     },
     {
         "title": "最重要的日常",
         "author": "山下英子、自凝心平",
         "isbn": "9789578787124",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1573030600i/48718204.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1573030600i/48718204.jpg",
+        "tag": 3
     },
     {
         "title": "一個人的好天氣",
@@ -262,7 +292,8 @@
         "isbn": "9789571349312",
         "thoughts": "I gained strength and comfort from this book. Time that was shared among myself can also be precious and self-justified. This book and \"Park Life\", both as a Akutagawa Prize winner, reflected the modern connection of society.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1473847847i/32047197.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1473847847i/32047197.jpg",
+        "tag": 3
     },
     {
         "title": "千羽鶴",
@@ -273,7 +304,8 @@
         "y": 6,
         "thoughts": "Sensual connections lingering in a strict frame of cultural disciplines. It's another classic from Kawabata, but the perfect combination of the symbolism in tea cermony, lacquerware, and romance. ",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1674731342i/86552023.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1674731342i/86552023.jpg",
+        "tag": 1
     },
     {
         "title": "Death In Venice",
@@ -282,7 +314,8 @@
         "isbn": "0486287149",
         "thoughts": "A romantic and genuine confession. The love is exaggerated (or maybe not), but the way Mann wrote was very moving as the plot slowly push you through an emotional ride. The subject is pure, as well as the love.",
         "location": "Taipei",
-        "img": "https://covers.openlibrary.org/b/id/311809-L.jpg"
+        "img": "https://covers.openlibrary.org/b/id/311809-L.jpg",
+        "tag": 1
     },
     {
         "title": "世界末日與冷酷異境",
@@ -292,7 +325,8 @@
         "y": -2,
         "thoughts": "Intelligent fiction! The way Murakami connects two seemingly parellel world was amazing. The trasition and the gradual integration made a satisfying mind game. Fun fact: I got this book from a second hand bookstore while I was traveling, from the signature from the previous owner of the book, seemed like the book has traveled more than I did.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1507187447i/7467717.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1507187447i/7467717.jpg",
+        "tag": 2
     },
     {
         "title": "王國1：仙女座高台",
@@ -302,7 +336,8 @@
         "y": 0,
         "thoughts": "Healing, growing, and receiving. The world catches you softly but surely here.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421909694i/24634556.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421909694i/24634556.jpg",
+        "tag": 1
     },
     {
         "title": "王國2：悲痛失去事物的影子以及魔法",
@@ -312,7 +347,8 @@
         "y": -4,
         "thoughts": "She saw the world for the first time not as an amateur.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421909933i/24634642.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421909933i/24634642.jpg",
+        "tag": 1
     },
     {
         "title": "Illness as Metaphor and AIDS and Its Metaphors",
@@ -321,7 +357,8 @@
         "isbn": "9780312420130",
         "thoughts": "The heaviness of sickness, not only physically but also the labels attached metaphorically. It made me reflect how easily it can be to fall into self indulgent empathy.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1429583860i/52375.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1429583860i/52375.jpg",
+        "tag": 3
     },
     {
         "title": "The Magic Mountain",
@@ -330,7 +367,8 @@
         "isbn": "9780679772873",
         "thoughts": "This book was difficult to me, in a way it felt like a slow burn. I read it over the worst COVID times, and it required a huge amount of determination to climb the hills for its unpleasantness.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1645738968i/88077.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1645738968i/88077.jpg",
+        "tag": 2
     },
     {
         "title": "公園生活",
@@ -339,7 +377,8 @@
         "isbn": "9789861733494",
         "thoughts": "Together with \"A Perfect Day to Be Alone\", they depicted the relationship and distance between modern people. How do you define relationship and what forms the definition of it? The airy space between human connections are fascinatingly written in this book.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1391026634i/20652763.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1391026634i/20652763.jpg",
+        "tag": 1
     },
     {
         "title": "為什麼設計",
@@ -348,7 +387,8 @@
         "isbn": "9789866488269",
         "thoughts": "This collection of dialogue between Kenya and Masayo from Tokyo and Berlin went in depth in the essentials of design, and questioned the reasons of trends, the urgency and importance of design thinking. It read like an exciting lecture yet made me feel short and humbled when questioned the aspects I have never thought of in my design practice.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1443838767i/18599563.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1443838767i/18599563.jpg",
+        "tag": 6
     },
     {
         "title": "雪國",
@@ -357,7 +397,8 @@
         "isbn": "9786267191477",
         "thoughts": "This book depicts the a lingering relationship between two people. The connection seemed so faded as time pass, yet even stronger because of the decade of time in between. It has the most beautiful ambient descriptions. The boundary seems blurry between the scenic and the metaphorical. ",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1676435292i/75667343.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1676435292i/75667343.jpg",
+        "tag": 1
     },
     {
         "title": "理想的下午：關於旅行也關於晃蕩",
@@ -365,7 +406,8 @@
         "isbn": "9789573242215",
         "thoughts": "灑脫、颯爽、乾脆，像是冬天晴空日子裡的冷風。",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1573997985i/1789968.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1573997985i/1789968.jpg",
+        "tag": 5
     },
     {
         "title": "鈴木大拙禪學入門",
@@ -373,7 +415,8 @@
         "author": "鈴木大拙 D.T. Suzuki",
         "isbn": "9789866571244",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570515441l/52636246.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570515441l/52636246.jpg",
+        "tag": 5
     },
     {
         "title": "苦雨之地",
@@ -382,7 +425,8 @@
         "isbn": "9789869689274",
         "thoughts": "Fantastical stories of going after mystical creatures in the mountains. The nature was in pain, wounded, while these characters can feel as they hunt. The beleif these characters hold seems fantastical yet it bears so much truth and tenderness that contrasts how little awareness we have in modern society.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1547218052i/43466978.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1547218052i/43466978.jpg",
+        "tag": 1
     },
     {
         "title": "樹之歌：生物學家對宇宙萬物的哲學思索",
@@ -391,7 +435,8 @@
         "isbn": "9789864773008",
         "thoughts": "Reading this, I want to feel the leaves and hear the sound of nature so badly. It made me sad how disconnected we are when living in urban jungles while so many things are going on in places where we can't see. And we don't even get a chance to know them while so many are being destroyed and eliminated...The world written here almost sounds like a paradise - to communicate with your family through the thick root of Ceiba trees...what can feel more genuine than this?",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1515204992i/37837439.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1515204992i/37837439.jpg",
+        "tag": 3
     },
     {
         "title": "徒然草",
@@ -399,7 +444,8 @@
         "author": "吉田兼好",
         "isbn": "9789571365558",
         "thoughts": "A guidance for observations. Not only observing the happenings, but also applying the gaze towards one's inner activities. These small blocks form the foundation of nature.",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462260720i/30080639.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462260720i/30080639.jpg",
+        "tag": 5
     },
     {
         "title": "推測設計",
@@ -408,7 +454,8 @@
         "isbn": "9789869801201",
         "thoughts": "I learned about this while the studio I worked in was publishing the Chinese version of this book in Taiwan. I got hyped up and spent a year making my speculative design thesis. The ability of social dreaming seemed more urgent than ever, as a counterbalance of all the depression (economical, mental, etc.) and as a practice to regain hope.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1681611389i/133172469.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1681611389i/133172469.jpg",
+        "tag": 2
     },
     {
         "title": "另一種語言",
@@ -417,7 +464,8 @@
         "isbn": "9789869583565",
         "thoughts": "Writing is vulnerable, yet writing the experince of learning a foreign language requires another level of honesty and courage. Lahiri approached Italien so genuinely and bravely that her experience read like embracing another body.",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1538186441i/42092517.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1538186441i/42092517.jpg",
+        "tag": 3
     },
     {
         "title": "浮光",
@@ -426,147 +474,172 @@
         "isbn": "9789865824150",
         "thoughts": "Each theme is unfolded in two ways - positive and negative spaces - just like analog films. Ming-Yi's approach to photography was closely connected to his subjects and the city. The photographer moves his camera as well as his physical body through the world to capture what he has seen. Not all images are contemporary, they are mixtures of memories, understandings, and imaginations",
         "location": "Taipei",
-        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1400424204i/22169865.jpg"
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1400424204i/22169865.jpg",
+        "tag": 5
     },
     {
         "title": "原子習慣",
         "translatedTitle": "Atomic Habits",
         "author": "James Clear",
-        "isbn": "9789861755267"
+        "isbn": "9789861755267",
+        "tag": 5
     },
     {
         "title": "群鳥",
         "translatedTitle": "鳥たち, \"Birds\"",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "9789571375250"
+        "isbn": "9789571375250",
+        "tag": 1
     },
     {
         "title": "全思考：吧台旁說人生",
         "author": "北野武",
-        "isbn": "9789865824846"
+        "isbn": "9789865824846",
+        "tag": 2
     },
     {
         "title": "理想的簡單生活",
         "author": "Dominique Loreau",
-        "isbn": "9789866006548"
+        "isbn": "9789866006548",
+        "tag": 3
     },
     {
         "title": "肥瘦對寫",
         "author": "駱以軍、董啟章",
-        "isbn": "9789863870913"
+        "isbn": "9789863870913",
+        "tag": 5
     },
     {
         "title": "蟬",
         "author": "林懷民",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 6
     },
     {
         "title": "不朽",
         "translatedTitle": "L’immortalite",
         "author": "Milan Kundera",
-        "isbn": "9789573321262"
+        "isbn": "9789573321262",
+        "tag": 2
     },
     {
         "title": "歡迎光臨人類學",
         "translatedTitle": "Invitation to Anthropology (3rd Edition)",
         "author": "Luke Eric Lassiter",
-        "isbn": "9789866525285"
+        "isbn": "9789866525285",
+        "tag": 5
     },
     {
         "title": "液態現代性",
         "translatedTitle": "Liquid Modernity",
         "author": "Zygmunt Bauman",
-        "isbn": "9789864775767"
+        "isbn": "9789864775767",
+        "tag": 5
     },
     {
         "title": "The End of Eddy",
         "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Species and Spaces and Other Poems",
         "translatedTitle": "N/A",
         "author": "George Perec",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 6
     },
     {
         "title": "A Woman Looking at Men Looking at Women",
         "translatedTitle": "N/A",
         "author": "Siri Hustvedt",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "Eichmann and the Holocaust",
         "translatedTitle": "N/A",
         "author": "Hannah Arendt",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Paris Spleen",
         "translatedTitle": "N/A",
         "author": "Charles Baudelaire",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Nobody's Home",
         "translatedTitle": "N/A",
         "author": "Dubravka Ugresic",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Under the Tuscan Sun",
         "translatedTitle": "N/A",
         "author": "Frances Mayes",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "About Looking ",
         "translatedTitle": "N/A",
         "author": "John Berger",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "Ways of Seeing",
         "translatedTitle": "N/A",
         "author": "John Berger",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "The Lover",
         "translatedTitle": "N/A",
         "author": "Margarite Duras",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Conversation With Friends",
         "translatedTitle": "N/A",
         "author": "Sally Rooney",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Normal People",
         "translatedTitle": "N/A",
         "author": "Sally Rooney",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Beautiful World, Where Are You",
         "translatedTitle": "N/A",
         "author": "Sally Rooney",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "The Psycology of Money",
         "translatedTitle": "N/A",
         "author": "Morgan Housel",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 5
     },
     {
         "title": "All About Love: New Visions",
         "translatedTitle": "N/A",
         "author": "Bell Hooks",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 3
     },
     {
         "title": "身為職業小說家",
@@ -574,31 +647,36 @@
         "author": "Haruki Murakami",
         "isbn": "0",
         "x": -2,
-        "y": 12
+        "y": 12,
+        "tag": 3
     },
     {
         "title": "An Apprenticeship or The Book of Pleasures",
         "translatedTitle": "N/A",
         "author": "Clarice Lispector",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Essays In Love",
         "translatedTitle": "N/A",
         "author": "Alan De Botton",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "The Idiot",
         "translatedTitle": "N/A",
         "author": "Elif Batuman",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Book of Longing",
         "translatedTitle": "N/A",
         "author": "Leonard Cohen",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "性意思史",
@@ -606,43 +684,50 @@
         "author": "張亦絢",
         "isbn": "0",
         "x": -2,
-        "y": -2
+        "y": -2,
+        "tag": 6
     },
     {
         "title": "Goodbye, Again",
         "translatedTitle": "N/A",
         "author": "Jonny Sun",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 3
     },
     {
         "title": "感覺十書",
         "translatedTitle": "N/A",
         "author": "蔣勳",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "The Atmospherians",
         "translatedTitle": "N/A",
         "author": "Isle McElroy",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Writing",
         "translatedTitle": "N/A",
         "author": "Margarite Duras",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "品味，從知識開始",
         "translatedTitle": "N/A",
         "author": "水野學",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "羽衣",
         "translatedTitle": "N/A",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "王國3：秘密的花園",
@@ -650,7 +735,8 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 2,
-        "y": -8
+        "y": -8,
+        "tag": 2
     },
     {
         "title": "王國4：另一個世界",
@@ -658,7 +744,8 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 2,
-        "y": -12
+        "y": -12,
+        "tag": 1
     },
     {
         "title": "聽風的歌",
@@ -666,13 +753,15 @@
         "author": "村上春樹",
         "isbn": "0",
         "x": 0,
-        "y": 10
+        "y": 10,
+        "tag": 1
     },
     {
         "title": "我是許涼涼",
         "translatedTitle": "N/A",
         "author": "李維菁",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "愛的不久時：南特／巴黎回憶錄",
@@ -680,55 +769,64 @@
         "author": "張亦絢",
         "isbn": "0",
         "x": -2,
-        "y": 0
+        "y": 0,
+        "tag": 6
     },
     {
         "title": "療癒的飲食與斷食：新時代的個人營養學",
         "translatedTitle": "N/A",
         "author": "楊定一",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 5
     },
     {
         "title": "Things: A Story of the Sixties / A Man Asleep",
         "translatedTitle": "N/A",
         "author": "George Perec",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Who Killed My Father",
         "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "A Woman's Battles and Transformations",
         "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Braiding Sweetgrass",
         "translatedTitle": "N/A",
         "author": "Robin Wall Kimmerer",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 6
     },
     {
         "title": "The Fire Next TIme",
         "translatedTitle": "N/A",
         "author": "James Baldwin",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Against Nature",
         "translatedTitle": "N/A",
         "author": "Tomas Espedal",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 1
     },
     {
         "title": "Of Cities and Woman",
         "translatedTitle": "N/A",
         "author": "Etel Adnan",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "哀愁的預感",
@@ -736,7 +834,8 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 3,
-        "y": 10
+        "y": 10,
+        "tag": 1
     },
     {
         "title": "蜥蜴",
@@ -744,7 +843,8 @@
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "0",
         "x": 3,
-        "y": 8
+        "y": 8,
+        "tag": 1
     },
     {
         "title": "思念的長河",
@@ -752,13 +852,15 @@
         "author": "三毛",
         "isbn": "0",
         "x": 4,
-        "y": 12
+        "y": 12,
+        "tag": 3
     },
     {
         "title": "Death By Landscape",
         "translatedTitle": "N/A",
         "author": "Elvis Wilk",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "沒有色彩的多崎作和他的巡禮之年",
@@ -766,54 +868,63 @@
         "author": "Haruki Murakami",
         "isbn": "0",
         "x": 2,
-        "y": -3
+        "y": -3,
+        "tag": 1
     },
     {
         "title": "Bliss Montage",
         "translatedTitle": "N/A",
         "author": "Ling Ma",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Klara and the Sun",
         "translatedTitle": "N/A",
         "author": "Kazuo Ishiguro",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Tomorrow, and Tomorrow, and Tomorrow",
         "translatedTitle": "N/A",
         "author": "Gabrielle Zevin",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "A Year With Swollen Appendices",
         "translatedTitle": "N/A",
         "author": "Brian Eno",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 3
     },
     {
         "title": "The Year of Magical Thinking",
         "translatedTitle": "N/A",
         "author": "Joan Didion",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 2
     },
     {
         "title": "Metaphors We Live By",
         "translatedTitle": "N/A",
         "author": "George Lakoff",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 4
     },
     {
         "title": "想法誕生前最重要的事",
         "translatedTitle": "N/A",
         "author": "森本千絵 Chie Morimoto",
-        "isbn": "9789862356586"
+        "isbn": "9789862356586",
+        "tag": 4
     },
     {
         "title": "Selections from the Journal",
         "translatedTitle": "N/A",
         "author": "Jules Renard",
-        "isbn": "0"
+        "isbn": "0",
+        "tag": 3
     }
 ]

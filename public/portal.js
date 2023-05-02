@@ -14,13 +14,13 @@ export class Portal {
         let mat = new THREE.MeshStandardMaterial({
             emissive: matColor,
             emissiveIntensity: 0.01,
-            side: THREE.DoubleSide
-            //wireframe: true,
+            side: THREE.DoubleSide,
+            wireframe: true,
         });
         this.mesh = new THREE.Mesh(this.geo, mat);
         this.mesh.position.set(x, y + 0.01, z - 0.7);
         this.mesh.rotateX(Math.PI / 2);
-        //group.add(this.mesh);
+        group.add(this.mesh);
 
         //calculate the position without the book group's translate
 
@@ -35,11 +35,13 @@ export class Portal {
 
     activate() {
         this.mesh.material.emissiveIntensity = 20;
+        this.mesh.material.wireframe = false;
 
     }
 
     reset() {
         this.mesh.material.emissiveIntensity = 0.1;
+        this.mesh.material.wireframe = true;
 
     }
 
