@@ -108,6 +108,7 @@ input{
     padding:0;
     position:fixed;
     font-weight:100;
+
 }
 
 
@@ -120,11 +121,17 @@ input{
     width:100vw;
     margin:0;
     padding:0;
+
+}
+
+#intro>p, #instruction>p, #quote>p{
+    width:60vw;
     font-size:2rem;
 }
 
-#instruction, #quote>p{
-    width:60vw;
+#intro>button, #instruction>button, #quote > button{
+    border-radius: 100px;
+    font-size:1.3rem;
 }
 
 
