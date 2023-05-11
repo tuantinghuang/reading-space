@@ -30,7 +30,7 @@ export class Book {
         this.book.geometry.attributes.position.needsUpdate = true;
 
         let helper = new THREE.Box3Helper(this.box);
-        group.add(helper);
+        //group.add(helper);
 
     }
 

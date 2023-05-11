@@ -76,9 +76,6 @@ let sectionPlanes = [];
 let sectionLines = [];
 
 
-let socket;
-
-
 
 
 function init() {
@@ -121,8 +118,6 @@ function init() {
         font = data;
         console.log('font loaded!')
     });
-
-    establishWebsocketConnection();
 
     initWelcomePageComponents();
     initWorldmapComponents();
@@ -214,6 +209,23 @@ function initWelcomePageComponents() {
 
 
 
+    let loader = new FontLoader();
+    loader.load('/assets/helvetiker_regular.typeface.json', function (font) {
+        let textGeo = new TextGeometry('bookmarks', {
+            font: font,
+            size: 12,
+            height: 1,
+
+        });
+        let textMat = new THREE.MeshLambertMaterial({
+            color: 0xcccccc
+        });
+
+        let textMesh = new THREE.Mesh(textGeo, textMat);
+        textMesh.rotateY(-Math.PI / 2);
+        textMesh.position.set(28, 0, -50);
+        welcomeGroup.add(textMesh);
+    })
     welcomeGroup = new THREE.Group();
     bigBookGroup = new THREE.Group();
     zoomOutScene.add(welcomeGroup);
@@ -450,8 +462,8 @@ function clearLabel(name) {
 function createBoard() {
     let boardTexture = new THREE.TextureLoader().load('assets/grid-01.png', function () {
         boardTexture.wrapS = boardTexture.wrapT = THREE.RepeatWrapping;
-        boardtexture.offset.set(0, 0);
-        boardTexture.repeat.set(2, 2);
+        // boardTexture.offset.set(0, 0);
+        // boardTexture.repeat.set(2, 2);
     });
     let boardGeo = new THREE.BoxGeometry(60, 0.5, 100);
     let boardMat = new THREE.MeshLambertMaterial({ color: 0xcccccc, side: THREE.DoubleSide });
@@ -491,7 +503,7 @@ function createController() {
 
 
     let helper = new THREE.Box3Helper(controllerBox);
-    scene.add(helper);
+    //scene.add(helper);
 }
 
 
@@ -616,7 +628,6 @@ async function getData(model) {
             z = Math.floor(getRandomArbitrary(minY, maxY));
             if ((z % 2 == 1) || (z % 2 == -1)) z++;
 
-            console.log(x + ', ' + z);
 
             let b = new Book(x, 0.2, z - 0.2, bookGroup, model, palette[index]);
             b.book.userData = data[i];
@@ -820,7 +831,7 @@ function render() {
 
     if (activeCamera == topCamera) {
         welcomeGroup.rotation.y = 0;
-        renderRaycaster();
+        //renderRaycaster();
     } else {
         welcomeGroup.rotateY(0.001);
     }
@@ -899,10 +910,13 @@ function showBookInfo(id) {
 
 
     let originalT = books[id].book.userData.translatedTitle;
-    let originalTitle = document.createTextNode(originalT);
+    let originalTitle;
+
+    if (originalT) {
+        originalTitle = document.createTextNode(originalT);
+    }
     let originalTitleDiv = document.querySelector("#originalTitle");
     originalTitleDiv.innerHTML = "";
-
 
     let a = books[id].book.userData.author;
     let author = document.createTextNode(a);
@@ -915,9 +929,15 @@ function showBookInfo(id) {
         cover.src = imgsrc;
     }
 
+    let _i = "ISBN: ";
+    let ISBN = books[id].book.userData.isbn;
+    let i = _i.concat(ISBN);
+    i.concat(books[id].book.userData.isbn);
 
-    let i = books[id].book.userData.isbn;
+
     let isbn = document.createTextNode(i);
+
+
     let isbnDiv = document.querySelector("#isbn");
     isbnDiv.innerHTML = "";
 
@@ -928,7 +948,9 @@ function showBookInfo(id) {
 
     if (titleDiv.innerHTML == "") {
         titleDiv.appendChild(title);
-        originalTitleDiv.appendChild(originalTitle);
+        if (originalT) {
+            originalTitleDiv.appendChild(originalTitle);
+        }
         authorDiv.appendChild(author);
         isbnDiv.appendChild(isbn);
         thoughtsDiv.appendChild(thoughts);
@@ -936,7 +958,7 @@ function showBookInfo(id) {
 
 
     if (collection.includes(t)) {
-        addBtn.innerHTML = 'Added!';
+        addBtn.innerHTML = 'Added';
     }
 
 
@@ -955,6 +977,7 @@ function addtoCollection() {
 
         //switch the collection container's display just once  
         if (collection.length < 1) {
+            //
             collectionContainer.style.display = "block";
         }
 
@@ -974,7 +997,7 @@ function addtoCollection() {
         collectionContainer.appendChild(collectionDiv);
 
     }
-    addBtn.innerHTML = "Added!";
+    addBtn.innerHTML = "Added";
 
 }
 
@@ -999,30 +1022,4 @@ function showCommentBox() {
 function clearCommentBox() {
     let containerDiv = document.getElementById('portalContainer');
     containerDiv.style.display = 'none';
-}
-
-//-----------------------SOCKET CLIENT SIDE -------------------------------------
-
-function establishWebsocketConnection() {
-    socket = io();
-
-    socket.on("msg", (msg) => {
-        console.log(
-            "Got a message from friend with ID ",
-            msg.from,
-            "and data:",
-            msg.data
-        );
-
-    });
-
-    // document.addEventListener(
-    //   "keyup",
-    //   (ev) => {
-    //     if (ev.key === "t") {
-    //       socket.emit("msg", Date.now());
-    //     }
-    //   },
-    //   false
-    // );
 }

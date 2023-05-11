@@ -4,23 +4,20 @@ import * as THREE from 'three';
 export class Portal {
     constructor(x, y, z, group) {
 
-        let hue = Math.floor(this.getRandomArbitrary(0, 360));
-        let c = 'hsl(';
-        let color = c.concat(hue).concat(', 100%, 20%)');
-        let matColor = new THREE.Color(color);
+        // let hue = Math.floor(this.getRandomArbitrary(0, 360));
+        // let c = 'hsl(';
+        // let color = c.concat(hue).concat(', 100%, 90%)');
+        let matColor = new THREE.Color('hsl(100,0%,45%)');
 
-        this.geo = new THREE.PlaneGeometry(1.5, 1.5);
-
-        let mat = new THREE.MeshStandardMaterial({
-            emissive: matColor,
-            emissiveIntensity: 0.01,
-            side: THREE.DoubleSide,
-            wireframe: true,
+        //this.geo = new THREE.PlaneGeometry(1.5, 1.5);
+        this.geo = new THREE.CylinderGeometry(0, 1, 1, 32);
+        let mat = new THREE.MeshBasicMaterial({
+            color: matColor
         });
         this.mesh = new THREE.Mesh(this.geo, mat);
         this.mesh.position.set(x, y + 0.01, z - 0.7);
-        this.mesh.rotateX(Math.PI / 2);
-        group.add(this.mesh);
+        //this.mesh.rotateX(Math.PI / 2);
+        //group.add(this.mesh);
 
         //calculate the position without the book group's translate
 
@@ -35,13 +32,13 @@ export class Portal {
 
     activate() {
         this.mesh.material.emissiveIntensity = 20;
-        this.mesh.material.wireframe = false;
+        this.mesh.material.color.set(0xeeeeee);
 
     }
 
     reset() {
-        this.mesh.material.emissiveIntensity = 0.1;
-        this.mesh.material.wireframe = true;
+        this.mesh.material.emissiveIntensity = 0;
+        this.mesh.material.color.set(0x111111)
 
     }
 

@@ -89,7 +89,7 @@
         "isbn": "9780857424426",
         "thoughts": "My first Espedal's. He wrote about how he wrote, mixing fictions with his first perspective. I can feel the afternoon sun shining into a hotel room in southern Italy reading this.",
         "location": "Trondheim",
-        "img": "",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1475305012i/31939429.jpg",
         "tag": 1
     },
     {
@@ -482,6 +482,8 @@
         "translatedTitle": "Atomic Habits",
         "author": "James Clear",
         "isbn": "9789861755267",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1574000583i/48843803.jpg",
         "tag": 5
     },
     {
@@ -489,37 +491,50 @@
         "translatedTitle": "鳥たち, \"Birds\"",
         "author": "吉本芭那那 Banana Yoshimoto",
         "isbn": "9789571375250",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1542253593i/42800121.jpg",
         "tag": 1
     },
     {
         "title": "全思考：吧台旁說人生",
-        "author": "北野武",
+        "author": "北野武 Takeshi Kitano",
         "isbn": "9789865824846",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1385616815i/19014459.jpg",
         "tag": 2
     },
     {
         "title": "理想的簡單生活",
+        "translatedTitle": "L'art de la Simplicité",
         "author": "Dominique Loreau",
         "isbn": "9789866006548",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1472571518i/24776577.jpg",
         "tag": 3
     },
     {
         "title": "肥瘦對寫",
         "author": "駱以軍、董啟章",
         "isbn": "9789863870913",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579710263i/50626107.jpg",
         "tag": 5
     },
     {
         "title": "蟬",
         "author": "林懷民",
-        "isbn": "0",
+        "isbn": "9789573014294",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1540807119i/42525089.jpg",
         "tag": 6
     },
     {
         "title": "不朽",
         "translatedTitle": "L’immortalite",
         "author": "Milan Kundera",
-        "isbn": "9789573321262",
+        "isbn": "9789573334514",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1560411245l/50755757.jpg",
         "tag": 2
     },
     {
@@ -527,6 +542,8 @@
         "translatedTitle": "Invitation to Anthropology (3rd Edition)",
         "author": "Luke Eric Lassiter",
         "isbn": "9789866525285",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1679131369i/29356443.jpg",
         "tag": 5
     },
     {
@@ -534,397 +551,404 @@
         "translatedTitle": "Liquid Modernity",
         "author": "Zygmunt Bauman",
         "isbn": "9789864775767",
+        "location": "Taipei",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553222030i/44566317.jpg",
         "tag": 5
     },
     {
         "title": "The End of Eddy",
-        "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0",
+        "isbn": "9780374266653",
+        "location": "Trondheim",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493822268i/31574750.jpg",
         "tag": 1
     },
     {
         "title": "Species and Spaces and Other Poems",
-        "translatedTitle": "N/A",
         "author": "George Perec",
-        "isbn": "0",
+        "isbn": "9780141442242",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1662723023i/1694544.jpg",
         "tag": 6
     },
     {
         "title": "A Woman Looking at Men Looking at Women",
-        "translatedTitle": "N/A",
         "author": "Siri Hustvedt",
-        "isbn": "0",
+        "isbn": "9781501141096",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1476030593i/29430708.jpg",
         "tag": 4
     },
     {
         "title": "Eichmann and the Holocaust",
-        "translatedTitle": "N/A",
         "author": "Hannah Arendt",
-        "isbn": "0",
+        "isbn": "9780143037606",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1309287602i/326688.jpg",
         "tag": 1
     },
     {
-        "title": "Paris Spleen",
-        "translatedTitle": "N/A",
+        "title": "Paris Spleen and Wine and Hashish",
         "author": "Charles Baudelaire",
-        "isbn": "0",
+        "isbn": "9781847494931",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1469414343i/31176998.jpg",
         "tag": 1
     },
     {
         "title": "Nobody's Home",
-        "translatedTitle": "N/A",
         "author": "Dubravka Ugresic",
-        "isbn": "0",
+        "isbn": "9781846590191",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347263701i/2494266.jpg",
         "tag": 1
     },
     {
         "title": "Under the Tuscan Sun",
-        "translatedTitle": "N/A",
         "author": "Frances Mayes",
-        "isbn": "0",
+        "isbn": "9780767902809",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1329169355i/7208.jpg",
         "tag": 2
     },
     {
         "title": "About Looking ",
-        "translatedTitle": "N/A",
         "author": "John Berger",
-        "isbn": "0",
+        "isbn": "9780679736554",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348552371i/470185.jpg",
         "tag": 4
     },
     {
         "title": "Ways of Seeing",
-        "translatedTitle": "N/A",
         "author": "John Berger",
-        "isbn": "0",
+        "isbn": "9780140135152",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1464018308i/2784.jpg",
         "tag": 4
     },
     {
         "title": "The Lover",
-        "translatedTitle": "N/A",
         "author": "Margarite Duras",
-        "isbn": "0",
+        "isbn": "9780375700521",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657544478i/275.jpg",
         "tag": 1
     },
     {
-        "title": "Conversation With Friends",
-        "translatedTitle": "N/A",
+        "title": "Conversations with Friends",
         "author": "Sally Rooney",
-        "isbn": "0",
+        "isbn": "9780571333134",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546520004i/35285193.jpg",
         "tag": 2
     },
     {
         "title": "Normal People",
-        "translatedTitle": "N/A",
         "author": "Sally Rooney",
-        "isbn": "0",
+        "isbn": "9781984822178",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg",
         "tag": 1
     },
     {
         "title": "Beautiful World, Where Are You",
-        "translatedTitle": "N/A",
         "author": "Sally Rooney",
-        "isbn": "0",
+        "isbn": "9780374602604",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618329605i/56597885.jpg",
         "tag": 2
     },
     {
         "title": "The Psycology of Money",
-        "translatedTitle": "N/A",
         "author": "Morgan Housel",
-        "isbn": "0",
+        "isbn": "9780857197689",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1581527774i/41881472.jpg",
         "tag": 5
     },
     {
         "title": "All About Love: New Visions",
-        "translatedTitle": "N/A",
         "author": "Bell Hooks",
-        "isbn": "0",
+        "isbn": "9780060959470",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1520297939i/218042.jpg",
         "tag": 3
     },
     {
         "title": "身為職業小說家",
-        "translatedTitle": "N/A",
+        "translatedTitle": "職業としての小説家",
         "author": "Haruki Murakami",
-        "isbn": "0",
+        "isbn": "9789571365107",
         "x": -2,
         "y": 12,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1452658938i/28529741.jpg",
         "tag": 3
     },
     {
         "title": "An Apprenticeship or The Book of Pleasures",
-        "translatedTitle": "N/A",
         "author": "Clarice Lispector",
-        "isbn": "0",
+        "isbn": "9780811230612",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1605907016i/53492652.jpg",
         "tag": 1
     },
     {
         "title": "Essays In Love",
-        "translatedTitle": "N/A",
         "author": "Alan De Botton",
-        "isbn": "0",
+        "isbn": "9781447275329",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1420735235i/24376201.jpg",
         "tag": 2
     },
     {
         "title": "The Idiot",
-        "translatedTitle": "N/A",
         "author": "Elif Batuman",
-        "isbn": "0",
+        "isbn": "9781594205613",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1474782288i/30962053.jpg",
         "tag": 2
     },
     {
-        "title": "Book of Longing",
-        "translatedTitle": "N/A",
-        "author": "Leonard Cohen",
-        "isbn": "0",
-        "tag": 4
-    },
-    {
         "title": "性意思史",
-        "translatedTitle": "N/A",
         "author": "張亦絢",
-        "isbn": "0",
+        "isbn": "9789863596943",
         "x": -2,
         "y": -2,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562755135l/51197442.jpg",
         "tag": 6
     },
     {
         "title": "Goodbye, Again",
-        "translatedTitle": "N/A",
         "author": "Jonny Sun",
-        "isbn": "0",
+        "isbn": "9780062880857",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602088203i/41952241.jpg",
         "tag": 3
     },
     {
         "title": "感覺十書",
-        "translatedTitle": "N/A",
         "author": "蔣勳",
-        "isbn": "0",
+        "isbn": "9789570833751",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1439988437i/14623675.jpg",
         "tag": 4
     },
     {
         "title": "The Atmospherians",
-        "translatedTitle": "N/A",
         "author": "Isle McElroy",
-        "isbn": "0",
+        "isbn": "9781982158323",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1642043045i/58438561.jpg",
         "tag": 2
     },
     {
         "title": "Writing",
-        "translatedTitle": "N/A",
         "author": "Margarite Duras",
-        "isbn": "0",
+        "isbn": "9780816677535",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328013768i/12124339.jpg",
         "tag": 4
     },
     {
         "title": "品味，從知識開始",
-        "translatedTitle": "N/A",
         "author": "水野學",
-        "isbn": "0",
+        "isbn": "9789571398921",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1558982504i/46026472.jpg",
         "tag": 4
     },
     {
         "title": "羽衣",
-        "translatedTitle": "N/A",
+        "translatedTitle": "ハゴロモ",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0",
+        "isbn": "9789571345468",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421921012i/24637269.jpg",
         "tag": 1
     },
     {
         "title": "王國3：秘密的花園",
-        "translatedTitle": "N/A",
+        "translatedTitle": "王国 その3 ひみつの花園",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0",
+        "isbn": "9789571349633",
         "x": 2,
         "y": -8,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421914480i/24636021.jpg",
         "tag": 2
     },
     {
         "title": "王國4：另一個世界",
-        "translatedTitle": "N/A",
+        "translatedTitle": "王国 その4 アナザー・ワールド",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0",
+        "isbn": "9789571354286",
         "x": 2,
         "y": -12,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421912746i/24635567.jpg",
         "tag": 1
     },
     {
         "title": "聽風的歌",
-        "translatedTitle": "N/A",
-        "author": "村上春樹",
-        "isbn": "0",
+        "translatedTitle": "風の歌を聴け Hear the Wind Sing",
+        "author": "村上春樹 Haruki Murakami",
+        "isbn": "9789571350288",
         "x": 0,
         "y": 10,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1502633678i/9850132.jpg",
         "tag": 1
     },
     {
         "title": "我是許涼涼",
-        "translatedTitle": "N/A",
         "author": "李維菁",
-        "isbn": "0",
+        "isbn": "9789866377990",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1496149560i/35267125.jpg",
         "tag": 2
     },
     {
         "title": "愛的不久時：南特／巴黎回憶錄",
-        "translatedTitle": "N/A",
         "author": "張亦絢",
-        "isbn": "0",
+        "isbn": "9789863598220",
         "x": -2,
         "y": 0,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1634400655i/59359571.jpg",
         "tag": 6
     },
     {
         "title": "療癒的飲食與斷食：新時代的個人營養學",
-        "translatedTitle": "N/A",
+        "translatedTitle": "Healing Diet, Healing Fast",
         "author": "楊定一",
-        "isbn": "0",
+        "isbn": "9786269586530",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1653302082i/61152075.jpg",
         "tag": 5
     },
     {
         "title": "Things: A Story of the Sixties / A Man Asleep",
-        "translatedTitle": "N/A",
         "author": "George Perec",
-        "isbn": "0",
+        "isbn": "9781567921571",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1366408059i/28295.jpg",
         "tag": 2
     },
     {
         "title": "Who Killed My Father",
-        "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0",
+        "isbn": "9780811228503",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549370375i/43842414.jpg",
         "tag": 2
     },
     {
         "title": "A Woman's Battles and Transformations",
-        "translatedTitle": "N/A",
         "author": "Edourard Louis",
-        "isbn": "0",
+        "isbn": "9780374606749",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1647277059i/59124731.jpg",
         "tag": 2
     },
     {
         "title": "Braiding Sweetgrass",
-        "translatedTitle": "N/A",
         "author": "Robin Wall Kimmerer",
-        "isbn": "0",
+        "isbn": "9781571313355",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1366775928i/17465709.jpg",
         "tag": 6
     },
     {
         "title": "The Fire Next TIme",
-        "translatedTitle": "N/A",
         "author": "James Baldwin",
-        "isbn": "0",
+        "isbn": "9780679744726",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657560861i/464260.jpg",
         "tag": 1
     },
     {
-        "title": "Against Nature",
-        "translatedTitle": "N/A",
+        "title": "Against Nature: The Notebooks",
         "author": "Tomas Espedal",
-        "isbn": "0",
+        "isbn": "9780857422354",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1411605058i/23258421.jpg",
         "tag": 1
     },
     {
         "title": "Of Cities and Woman",
-        "translatedTitle": "N/A",
         "author": "Etel Adnan",
-        "isbn": "0",
+        "isbn": "9780942996210",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387721029i/817755.jpg",
         "tag": 4
     },
     {
         "title": "哀愁的預感",
-        "translatedTitle": "N/A",
+        "translatedTitle": "哀しい予感",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0",
+        "isbn": "9789571338644",
         "x": 3,
         "y": 10,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421916493i/24636585.jpg",
         "tag": 1
     },
     {
         "title": "蜥蜴",
-        "translatedTitle": "N/A",
+        "translatedTitle": "とかげ",
         "author": "吉本芭那那 Banana Yoshimoto",
-        "isbn": "0",
+        "isbn": "9789571329420",
         "x": 3,
         "y": 8,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421911193i/24635130.jpg",
         "tag": 1
     },
     {
         "title": "思念的長河",
-        "translatedTitle": "N/A",
         "author": "三毛",
-        "isbn": "0",
+        "isbn": "9789573329787",
         "x": 4,
         "y": 12,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1371380229i/18076837.jpg",
         "tag": 3
     },
     {
-        "title": "Death By Landscape",
-        "translatedTitle": "N/A",
+        "title": "Death by Landscape",
         "author": "Elvis Wilk",
-        "isbn": "0",
+        "isbn": "9781593767150",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664006717i/59742663.jpg",
         "tag": 4
     },
     {
         "title": "沒有色彩的多崎作和他的巡禮之年",
-        "translatedTitle": "N/A",
+        "translatedTitle": "色彩を持たない多崎つくると、彼の巡礼の年, 'Colorless Tsukuru Tazaki and His Years of Pilgrimage'",
         "author": "Haruki Murakami",
-        "isbn": "0",
+        "isbn": "9789571358208",
         "x": 2,
         "y": -3,
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386839004i/19391096.jpg",
         "tag": 1
     },
     {
         "title": "Bliss Montage",
-        "translatedTitle": "N/A",
         "author": "Ling Ma",
-        "isbn": "0",
+        "isbn": "9780374293512",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1650397247i/60243188.jpg",
         "tag": 2
     },
     {
         "title": "Klara and the Sun",
-        "translatedTitle": "N/A",
         "author": "Kazuo Ishiguro",
-        "isbn": "0",
+        "isbn": "9780593318171",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1603206535i/54120408.jpg",
         "tag": 2
     },
     {
         "title": "Tomorrow, and Tomorrow, and Tomorrow",
-        "translatedTitle": "N/A",
         "author": "Gabrielle Zevin",
-        "isbn": "0",
+        "isbn": "9780593321201",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1636978687i/58784475.jpg",
         "tag": 2
     },
     {
         "title": "A Year With Swollen Appendices",
-        "translatedTitle": "N/A",
         "author": "Brian Eno",
-        "isbn": "0",
+        "isbn": "9780571179954",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1312015296i/160117.jpg",
         "tag": 3
     },
     {
         "title": "The Year of Magical Thinking",
-        "translatedTitle": "N/A",
         "author": "Joan Didion",
-        "isbn": "0",
+        "isbn": "9781400078431",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327878638i/7815.jpg",
         "tag": 2
     },
     {
         "title": "Metaphors We Live By",
-        "translatedTitle": "N/A",
         "author": "George Lakoff",
-        "isbn": "0",
+        "isbn": "9780226468013",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388194058i/34459.jpg",
         "tag": 4
     },
     {
         "title": "想法誕生前最重要的事",
-        "translatedTitle": "N/A",
+        "translatedTitle": "アイデアが生まれる、一歩手前のだいじな話",
         "author": "森本千絵 Chie Morimoto",
         "isbn": "9789862356586",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1611281051i/56778678.jpg",
         "tag": 4
     },
     {
-        "title": "Selections from the Journal",
-        "translatedTitle": "N/A",
+        "title": "Journal 1887-1910",
+        "translatedTitle": 9780374260873,
         "author": "Jules Renard",
         "isbn": "0",
+        "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1637601927i/57693609.jpg",
         "tag": 3
     }
 ]

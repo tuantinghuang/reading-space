@@ -20,32 +20,6 @@ const http = require("http").createServer(app);
 const server = app.listen(8080);
 console.log("Server is running on http://localhost:8080");
 
-/////SOCKET.IO///////
-const io = require("socket.io")().listen(server);
-
-const peers = {};
-
-io.on("connection", (socket) => {
-    console.log(
-        "Someone joined our server using socket.io.  Their socket id is",
-        socket.id
-    );
-
-    peers[socket.id] = {};
-
-    console.log("Current peers:", peers);
-
-    socket.on("msg", (data) => {
-        console.log("Got message from client with id ", socket.id, ":", data);
-        let messageWithId = { from: socket.id, data: data };
-        socket.broadcast.emit("msg", messageWithId);
-    });
-
-    socket.on("disconnect", () => {
-        console.log("Someone with ID", socket.id, "left the server");
-        delete peers[socket.id];
-    });
-});
 
 
 
