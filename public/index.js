@@ -450,7 +450,7 @@ function showLabel(name) {
 function clearLabel(name) {
     let div = document.getElementById("sectionLabel");
     div.textContent = "";
-    div.style.color = 'black'
+    div.style.color = 'white'
 }
 
 
@@ -831,7 +831,7 @@ function render() {
 
     if (activeCamera == topCamera) {
         welcomeGroup.rotation.y = 0;
-        //renderRaycaster();
+        renderRaycaster();
     } else {
         welcomeGroup.rotateY(0.001);
     }
